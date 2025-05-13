@@ -27,7 +27,7 @@ BASE_IMAGE_DIR = "images/"
 CONCURRENCY_OVERRIDE_MODELS = ["Llama 3.1"]
 from models.anthropic import AnthropicModel
 from models.cohere import CohereModel
-# from models.custom_openai import CustomOpenAIModel
+from models.custom_openai import CustomOpenAIModel
 from models.gemini import GeminiModel
 from models.openai import OpenAIModel
 # from models.roboflow_workflow import RoboflowWorkflow
@@ -117,6 +117,19 @@ def main():
             assessment["prompt"],
             image_name=os.path.join(BASE_IMAGE_DIR, assessment["file_name"]),
         )
+        # if result is none, try on compressed
+        if result is None:
+            print(f"Retrying {model_name} with compressed image")
+            with open(
+                os.path.join(BASE_IMAGE_DIR, "compressed/", assessment["file_name"].replace(".png", ".jpeg")), "rb"
+            ) as image_file:
+                assessment["image"] = image_file.read()
+            result = model.run_with_retry(
+                assessment["image"],
+                assessment["prompt"],
+                image_name=os.path.join(BASE_IMAGE_DIR, "compressed/", assessment["file_name"].replace(".png", ".jpeg")),
+            )
+
         end_time = time.time()
         assessment["image"] = None
 
@@ -148,6 +161,11 @@ def main():
             "Gemini 2.5 Flash Preview": "",
             "Cohere Aya Vision 8B": "",
             "Cohere Aya Vision 32B": "",
+            "Qwen 2.5 VL 7B": "",
+            "Mistral Small 3.1 24b": "",
+            "Llama 4 Scout 17B": "",
+            "Llama 3 11B Vision": "",
+            "Gemma 3 27b": "",
         }
         # load from saved_results
         assessments_by_model = final_results["assessments_by_model"]
@@ -169,27 +187,22 @@ def main():
             "GPT-4.1 Mini": OpenAIModel(model_id="gpt-4.1-mini"),
             "GPT-4.1 Nano": OpenAIModel(model_id="gpt-4.1-nano"),
             "OpenAI O1": OpenAIModel(model_id="o1"),
-            # "Llama 3 11B Vision": CustomOpenAIModel(model_id="meta-llama/Llama-3.2-11B-Vision-Instruct", base_url="https://router.huggingface.co/together/v1", api_key=os.environ.get("HUGGINGFACE_API_KEY")),
-            # "Gemma 3 27b": CustomOpenAIModel(
-            #     model_id="google/gemma-3-27b-it-fast",
-            #     base_url="https://router.huggingface.co/nebius/v1",
-            #     api_key=os.environ.get("HUGGINGFACE_API_KEY"),
-            # ),
-            # "Mistral Small 3.1 24b": CustomOpenAIModel(
-            #     model_id="mistralai/Mistral-Small-3.1-24B-Instruct-2503",
-            #     base_url="https://router.huggingface.co/nebius/v1",
-            #     api_key=os.environ.get("HUGGINGFACE_API_KEY"),
-            # ),
-            # "Llama 4 Scout 17B": CustomOpenAIModel(
-            #     model_id="meta-llama/Llama-4-Scout-17B-16E-Instruct",
-            #     base_url="https://router.huggingface.co/together/v1",
-            #     api_key=os.environ.get("HUGGINGFACE_API_KEY"),
-            # ),
-            # "Llama 4 Scout 17B": CustomOpenAIModel(
-            #     model_id="meta-llama/Llama-4-Scout-17B-16E-Instruct",
-            #     base_url="https://router.huggingface.co/together/v1",
-            #     api_key=os.environ.get("HUGGINGFACE_API_KEY"),
-            # ),
+            "Llama 3 11B Vision": CustomOpenAIModel(model_id="meta-llama/Llama-3.2-11B-Vision-Instruct", base_url="https://router.huggingface.co/hf-inference/models/meta-llama/Llama-3.2-11B-Vision-Instruct/v1", api_key=os.environ.get("HUGGINGFACE_API_KEY")),
+            "Gemma 3 27b": CustomOpenAIModel(
+                model_id="google/gemma-3-27b-it-fast",
+                base_url="https://router.huggingface.co/nebius/v1",
+                api_key=os.environ.get("HUGGINGFACE_API_KEY"),
+            ),
+            "Mistral Small 3.1 24b": CustomOpenAIModel(
+                model_id="mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+                base_url="https://router.huggingface.co/nebius/v1",
+                api_key=os.environ.get("HUGGINGFACE_API_KEY"),
+            ),
+            "Llama 4 Scout 17B": CustomOpenAIModel(
+                model_id="meta-llama/Llama-4-Scout-17B-16E-Instruct",
+                base_url="https://router.huggingface.co/together/v1",
+                api_key=os.environ.get("HUGGINGFACE_API_KEY"),
+            ),
             "Claude 3.7 Sonnet": AnthropicModel(model_id="claude-3-7-sonnet-20250219"),
             "Claude 3.5 Haiku": AnthropicModel(model_id="claude-3-5-haiku-20241022"),
             "Gemini 2.5 Pro Preview": GeminiModel(model_id="gemini-2.5-pro-preview-03-25"),
@@ -198,11 +211,11 @@ def main():
             "Gemini 2.5 Flash Preview": GeminiModel(model_id="gemini-2.5-flash-preview-04-17"),
             "Cohere Aya Vision 8B": CohereModel(model_id="c4ai-aya-vision-8b"),
             "Cohere Aya Vision 32B": CohereModel(model_id="c4ai-aya-vision-32b"),
-            # "Qwen 2.5 VL 7B": CustomOpenAIModel(
-            #     model_id="Qwen/Qwen2.5-VL-7B-Instruct",
-            #     base_url="https://router.huggingface.co/hyperbolic/v1",
-            #     api_key=os.environ.get("HUGGINGFACE_API_KEY"),
-            # ),
+            "Qwen 2.5 VL 7B": CustomOpenAIModel(
+                model_id="Qwen/Qwen2.5-VL-7B-Instruct",
+                base_url="https://router.huggingface.co/hyperbolic/v1",
+                api_key=os.environ.get("HUGGINGFACE_API_KEY"),
+            ),
         }
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
@@ -494,9 +507,25 @@ def main():
         "tasks": assessment_categories,
         "final_results": final_results,
     }
+    # TypeError: Object of type bytes is not JSON serializable
+    # delete bytes recursively
+    def delete_bytes(obj):
+        if isinstance(obj, bytes):
+            try:
+                return obj.decode("utf-8")
+            except UnicodeDecodeError:
+                return ""
+        elif isinstance(obj, dict):
+            return {key: delete_bytes(value) for key, value in obj.items()}
+        elif isinstance(obj, list):
+            return [delete_bytes(item) for item in obj]
+        else:
+            return obj
+        
+    saved_results = delete_bytes(saved_results)
 
     with open("model_results.json", "w") as file:
-        file.write(orjson.dumps(saved_results).decode())
+        file.write(json.dumps(saved_results, indent=4))
 
     for assessment in assessments:
         src = os.path.join(BASE_IMAGE_DIR, assessment["file_name"])
