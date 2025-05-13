@@ -360,6 +360,9 @@ def main():
         title="Vision AI Checkup",
     )
 
+    models = list(model_providers.keys())
+    model_combinations = list(combinations(models, 2))
+
     # create page for each category, as task-name.html
     final_results = {"category_results": {}, "model_results": {}}
     final_results["category_results"]["all"] = model_results
@@ -475,7 +478,7 @@ def main():
                 card_template.render(
                     model_name=model_name,
                     grid=True,
-                    comparisons=[{"slug": f"/compare/{slugify(model_name)}-vs-{slugify(other_model)}/", "model_name": other_model} for other_model in model_providers.keys() if other_model != model_name],
+                    comparisons=[{"slug": f"/compare/{slugify(m1)}-vs-{slugify(m2)}/", "model_name": m2} for m1, m2 in model_combinations if m1 == model_name or m2 == model_name],
                     all_models=list(model_providers.keys()),
                     best_categories=best_categories,
                     results_csv_file=os.path.join(
@@ -605,9 +608,6 @@ def main():
             "w",
         ) as file:
             file.write(assessment_output)
-
-    models = list(model_providers.keys())
-    model_combinations = list(combinations(models, 2))
 
     for model1, model2 in model_combinations:
         print(f"Comparing {model1} and {model2}")
