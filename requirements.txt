@@ -1,0 +1,10 @@
+anthropic
+openai
+google-genai
+jinja2
+watchdog
+cohere
+orjson
+supervision
+tqdm
+numpy

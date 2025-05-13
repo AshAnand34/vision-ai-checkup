@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="leaderboard">
+    <div class="container">
+        <h1 class="h1 mb-3">Vision AI Checkup</h1>
+        {% if description %}
+        <p>{{ description }}</p>
+        {% else %}
+        <p><em>Take your LLM to the optometrist</em></p>
+        {% endif %}
+        <br>
+            <label class="sr-only" for="model-select">Explore by task</label>
+            <div class="select-wrap mb-3">
+                <select id="model-select" class="select">
+                    <option value="all">Best overall</option>
+                    {% for task in tasks %}
+                        <option value="{{ task.lower().replace(' ', '-') }}" {% if task == category %}selected{% endif %}>{{ task }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+        <div class="mb-2 text-sm text-zinc-600">
+            Run on {{ assessment_count }} prompts.
+        </div>
+        <div role="table" class="w-full bg-white rounded-lg overflow-hidden overflow-x-auto shadow-sm text-sm mb-3">
+            <div role="row" class="flex flex-nowrap min-w-80 gap-4 font-medium px-4 py-2 text-zinc-900">
+                <div class="flex-1">Model</div>
+                <div class="w-14">Score</div>
+                <div class="w-14">Time</div>
+            </div>
+            {% for model in model_results %}
+                <a role="row" class="model-row {% if loop.index > 10 %}hidden{% endif %}" href="/{{ model["model_name"].replace(' ', '-').lower().replace('.', '-') }}/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#{{ model["position"] }} <img src="{{ model['logo'] }}" class="w-4 h-4"> {{ model["model_name"] }}</div>
+                    <div class="w-14">{{ model["percentage"] }}%</div>
+                    <div class="w-14">
+                        {% if not category %}
+                        {{ model["average_time"] }}
+                        {% endif %}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+
+        <button id="toggle-more-btn" type="button" class="link">
+            Show more models
+        </button>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="h2 mb-1">Explore Prompts</h2>
+        <div class="text-zinc-600">Explore the prompts we run as part of the Vision AI Checkup.</div>
+        <div class="text-sm text-zinc-600 mb-3">(p.s.: you can add your own too!)</div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
+            {% for assessment in assessments[:6] %}
+                <a class="card-prompt" href="/assessments/{{ assessment['slug'] }}/">
+                    <div>{{ assessment["prompt"] }}</div>
+                    <div class="aspect-square overflow-hidden">
+                        <img
+                            class="w-full h-full object-cover"
+                            src="/images/compressed/{{ assessment['file_name'].replace(".png", ".jpeg") }}"
+                            alt="{{ assessment['assessment_name'] }}"
+                        >
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <a class="link" href="/prompts/">
+            Explore all {{ assessment_count }} prompts →
+        </a>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="h2 mb-3" id="about">About the Assessment</h2>
+        <div class="card">
+            <div class="rich-text">
+                <p>The Roboflow vision AI assessment measures how well new multimodal models perform at real world use cases.</p>
+                <p>Our assessment consists of dozens of images, questions, and answers that we benchmark against models. We run the assessment every time we add a new model to the leaderboard.</p>
+                <p>You can use the vision AI assessment to gauge how well a model does generally, without having to understand a complex benchmark with thousands of data points.</p>
+                <p>The assessment and models are constantly evolving. This means that as more tasks get added or models receive updates, we can build a clearer picture of the current state-of-the-art models in real-time.</p>
+                <p><a href="https://github.com/roboflow/vlm-assessment">All of our assessment code is open source</a>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="h2 mb-3">Contribute a Prompt</h2>
+        <div class="flex items-center gap-2 card">
+            <img class="w-6 h-6" src="/images/svg/lightbulb.svg" alt="Lightbulb">
+            <div class="rich-text">Have an idea for a prompt? <a href="https://github.com/roboflow/vlm-assessment">Open a pull request on the project repository!</a></div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        // on change of form, redirect to /task/task-name (all lower)
+        document.querySelector('#model-select').addEventListener('change', function() {
+            const task = this.value;
+            if (task === 'all') {
+                window.location.href = './';
+            } else {
+                window.location.href = `./${task.toLowerCase().replace(/\\s+/g, '_')}.html`;
+            }
+        });
+        const btn = document.getElementById('toggle-more-btn');
+        if (btn) {
+            btn.onclick = function toggleMore() {
+                const hiddenRows = document.querySelectorAll('.model-row.hidden');
+                const extraRows = document.querySelectorAll('.model-row:not(:nth-child(-n+11))');
+                const isHidden = hiddenRows.length > 0;
+
+                extraRows.forEach(row => row.classList.toggle('hidden', !isHidden));
+                btn.textContent = isHidden ? 'Show fewer models' : 'Show more models';
+            };
+        }
+    </script>
+{% endblock %}

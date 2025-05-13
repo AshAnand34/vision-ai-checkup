@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="w-full max-w-[75rem] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+    <div class="relative">
+        <div class="flex flex-col gap-6 sticky top-20">
+
+        <section>
+            <h1 class="h1">Prompt: {{ assessment['assessment_name'] }}</h1>
+            <div class="mb-3">{{ passed_count }} out of {{ total_count }} models answer this prompt correctly.</div>
+
+            <div class="card flex flex-col gap-4">
+                <div class=" text-zinc-600">
+                    <div><span class="font-semibold text-zinc-900">Prompt</span>: {{ assessment["prompt"] }}</div>
+                    <div><span class="font-semibold text-zinc-900">Answer</span>: {{ assessment["answer"] }}</div>
+                    <div><span class="font-semibold text-zinc-900">Submitted by</span>: <a href="{{ assessment['submitted_by_link'] }}">{{ assessment['submitted_by'] }}</a></div>
+                </div>
+                <img class="rounded-lg" src="/images/compressed/{{ assessment['file_name'].replace(".png", ".jpeg") }}" alt="{{ assessment['assessment_name'] }}" style="max-width: 100%; height: auto;">
+            </div>
+        </section>
+
+        <section>
+            <h2 class="h2 mb-3">Contribute a Prompt</h2>
+            <div class="flex items-center gap-2 card">
+                <img class="w-6 h-6" src="/images/svg/lightbulb.svg" alt="Lightbulb">
+                <div class="rich-text">Have an idea for a prompt? <a href="https://github.com/roboflow/vlm-assessment">Open a pull request on the project repository!</a></div>
+            </div>
+        </section>
+    </div>
+
+    </div>
+    <section>
+        <h2 class="h2 mb-3 md:mt-[44px]">How models perform on this prompt</h2>
+        <div class="flex flex-col gap-2">
+            {% for item in model_results %}
+                <details class="card cursor-pointer group">
+                    <summary {% if loop.index == 1 %}open{% endif %} class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            {% if item['correct'] %}
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            {% else %}
+                                <svg class="w-6 h-6 text-rose-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><line x1="160" y1="96" x2="96" y2="160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="96" y1="96" x2="160" y2="160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            {% endif %}
+                            {{ item['model_name'] }}
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: {{ item["result"] }}</p>
+                            <p><a href="/{{ item['model_name'].replace(' ', '-').lower().replace('.', '-') }}/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+    <div class="container">
+        <h1 class="h1 mb-3">{{ model1 }} vs.{{ model2 }}</h2>
+        <div class="flex flex-col md:flex-row gap-4">
+            <div class="card flex flex-col gap-3">
+                <div class="font-medium text-zinc-900">Passed:</div>
+                <div class="flex flex-col gap-1">
+                    <div class="flex justify-between gap-4 text-sm text-zinc-900">{{ model1 }} <span class="text-zinc-600">{{ passed_percentage_model1 }}% ({{ passed_count_model1 }}/{{ total_model1 }})</span>
+                    </div>
+                    <div class="flex justify-between gap-4 text-sm text-zinc-900">{{ model2 }} <span class="text-zinc-600">{{ passed_percentage_model2 }}%  ({{ passed_count_model2 }}/{{ total_model2 }})</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card flex flex-col gap-3">
+                <div class="font-medium text-zinc-900">Average request time:</div>
+                <div class="flex flex-col gap-1">
+                    <div class="flex justify-between gap-4 text-sm text-zinc-900">{{ model1 }} <span class="text-zinc-600">{{ avg_time_model1 }}</span>
+                    </div>
+                    <div class="flex justify-between gap-4 text-sm text-zinc-900">{{ model2 }} <span class="text-zinc-600">{{ avg_time_model2 }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="h2 mb-3">Summary</h2>
+        <div class="flex flex-col gap-4">
+            {% for category, value in by_category_results.items() %}
+                <div class="card  flex flex-col gap-2">
+                    <!-- Model 1 -->
+                    <div class="">
+                        <div class="font-medium text-zinc-900 mb-3">{{ category }}</div>
+
+                        <div class="flex justify-between items-center text-sm">
+                            <span>{{ value["model1"]["model_name"] }}</span>
+                            <span class="text-zinc-600">{{ value["model1"]['passed'] }} / {{ value["model1"]['total'] }}</span>
+                        </div>
+                        <div
+                            role="progressbar"
+                            aria-valuenow="{{ value['model1']['passed'] }}"
+                            aria-valuemin="0"
+                            aria-valuemax="{{ value['model1']['total'] }}"
+                            aria-label="Score: {{ value['model1']['passed'] }} out of {{ value['model1']['total'] }}"
+                            class="w-full bg-zinc-200 rounded-full h-4 overflow-hidden mt-1"
+                        >
+                            <div
+                                class="h-full bg-emerald-300 rounded-full transition-all duration-300"
+                                style="width: {{ (value['model1']['passed'] / value['model1']['total'] * 100)|round }}%;"
+                            ></div>
+                        </div>
+                    </div>
+
+                    <!-- Model 2 -->
+                    <div class="">
+                        <div class="flex justify-between items-center text-sm">
+                            <span>{{ value["model2"]["model_name"] }}</span>
+                            <span class="text-zinc-600">{{ value["model2"]['passed'] }} / {{ value["model2"]['total'] }}</span>
+                        </div>
+                        <div
+                            role="progressbar"
+                            aria-valuenow="{{ value['model2']['passed'] }}"
+                            aria-valuemin="0"
+                            aria-valuemax="{{ value['model2']['total'] }}"
+                            aria-label="Score: {{ value['model2']['passed'] }} out of {{ value['model2']['total'] }}"
+                            class="w-full bg-zinc-200 rounded-full h-4 overflow-hidden mt-1"
+                        >
+                            <div
+                                class="h-full bg-emerald-300 rounded-full transition-all duration-300"
+                                style="width: {{ (value['model2']['passed'] / value['model2']['total'] * 100)|round }}%;"
+                            ></div>
+                        </div>
+                    </div>
+
+                    {% for assessment in value["model1"]['assessments'] %}
+                        {% if assessment['category'] == name %}
+                            <a class="link" href="#{{ assessment['assessment_name'] }}">{{ assessment['assessment_name'] }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="h2 mb-3">Contribute a Prompt</h2>
+        <div class="flex items-center gap-2 card">
+            <img class="w-6 h-6" src="/images/svg/lightbulb.svg" alt="Lightbulb">
+            <div class="rich-text">Have an idea for a prompt? <a href="https://github.com/roboflow/vlm-assessment">Open a pull request on the project repository!</a></div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

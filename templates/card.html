@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="w-full max-w-[75rem] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+    <div class="relative">
+        <div class="flex flex-col gap-6 sticky top-20">
+            <section>
+                <div class="flex items-center justify-center w-12 h-12 bg-white rounded-full overflow-hidden shadow-sm mb-1">
+                    <img src="{{ logo }}" alt="Model Logo" class="w-8 h-8">
+                </div>
+                <h1 class="h1 mb-3">{{ model_name }}</h1>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="card flex justify-between items-center gap-2">
+                        <div>
+                            <div class="">
+                                <span class="text-2xl font-medium text-zinc-900">{{ passed_percentage }}%</span> <span class="text-sm text-zinc-600">({{ passed }}/{{ total }})</span>
+                            </div>
+                            <div class="text-sm text-zinc-600">Passed</div>
+                        </div>
+                        <img src="/images/svg/graph-bar.svg" alt="Graph bar" class="h-6 w-6">
+                    </div>
+
+                    <div class="card flex justify-between items-center gap-4">
+                        <div>
+                            <div class="text-2xl font-medium text-zinc-900">{{ average_time }}</div>
+                            <div class="text-sm text-zinc-600">Average Request Time</div>
+                        </div>
+                        <img src="/images/svg/stopwatch.svg" alt="Stopwatch" class="h-6 w-6">
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="h2 mb-3">Summary</h2>
+                <div class="card flex items-center gap-2">
+                    <img src="/images/svg/trophy.svg" alt="Trophy" class="h-6 w-6">
+                    <div>Ranked #1 on leaderboard for {{ ", ".join(best_categories).strip(",").strip() }}.</div>
+                </div>
+
+                <ul class="flex flex-col gap-2 mt-4 card">
+                    {% for name, record in by_category_results.items() %}
+                        <li class="">
+                            <button
+                                onclick="filterPrompts('{{ name }}')"
+                                class="w-full text-left"
+                            >
+                                <div class="flex justify-between items-center">
+                                    <span>{{ name }} →</span>
+                                    <span class="text-sm">{{ record['passed'] }} / {{ record['total'] }}</span>
+                                </div>
+                                <div
+                                    role="progressbar"
+                                    aria-valuenow="{{ record['passed'] }}"
+                                    aria-valuemin="0"
+                                    aria-valuemax="{{ record['total'] }}"
+                                    aria-label="Score: {{ record['passed'] }} out of {{ record['total'] }}"
+                                    class="w-full bg-zinc-200 rounded-full h-4 overflow-hidden mt-2"
+                                >
+                                    <div
+                                        class="h-full bg-emerald-300 rounded-full transition-all duration-300"
+                                        style="width: {{ (record['passed'] / record['total'] * 100)|round }}%;"
+                                    ></div>
+                                </div>
+                            </button>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="h2 mb-3">Contribute a Prompt</h2>
+                <div class="flex items-center gap-2 card">
+                    <img class="w-6 h-6" src="/images/svg/lightbulb.svg" alt="Lightbulb">
+                    <div class="rich-text">Have an idea for a prompt? <a href="https://github.com/roboflow/vlm-assessment">Open a pull request on the project repository!</a></div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="h2 mb-3">Compare with another model</h2>
+                <div class="select-wrap">
+                    <select class="select" id="compare">
+                        <option value="" disabled selected>Select a model to compare</option>
+                        {% for mn in comparisons %}
+                        {{ mn }}
+                            <option value="{{ mn['slug'] }}">{{ mn["model_name"] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <aside id="prompts">
+        <h2 id="prompts-heading" class="h2 mb-3 md:mt-[60px]">All Prompts</h2>
+        <div class="flex flex-col gap-2">
+            {% for assessment in results %}
+                <details class="card cursor-pointer group" {% if loop.index == 1 %}open{% endif %} data-category="{{ assessment['category'] }}">
+                    <summary id="{{ assessment['assessment_name'] }}" class="flex justify-between items-center">
+                        <div class="flex items-center gap-2">
+                            {% if assessment['correct'] %}
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            {% else %}
+                                <svg class="w-6 h-6 text-rose-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><line x1="160" y1="96" x2="96" y2="160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="96" y1="96" x2="160" y2="160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            {% endif %}
+                            {{ assessment['assessment_name'] }}
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4 mt-4">
+                        <img class="w-full h-auto rounded-lg" src="/images/compressed/{{ assessment['file_name'].replace(".png", ".jpeg") }}" alt="">
+                        <div class="rich-text">
+                            <div><b>Submitted by</b>: <a href="{{ assessment['submitted_by_link'] }}">{{ assessment['submitted_by'] }}</a></div>
+                            <div><b>Category</b>: {{ assessment['category'] }}</div>
+                            <div><b>Time taken</b>: {{ assessment['time_taken'] }}</div>
+                            <div><b>Model answer correct?</b>: {% if assessment["correct"] %}Yes{% else %}No{% endif %}</div>
+                            <div><b>Prompt</b>: {{ assessment['prompt'] }}</div>
+                            <div><b>Ground Truth</b>: {{ assessment['answer'] }}</div>
+                            <div><b>Model Output</b>: {{ assessment['result'] }}</div>
+                            {% if assessment["bbox_image"] %}
+                                <div><b>Image with correct bounding box annotations</b>: <img src="{{ assessment['bbox_image'] }}" /></div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </details>
+            {% endfor %}
+        </div>
+    </aside>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function filterPrompts (category) {
+        const details = document.getElementById('prompts').querySelectorAll('details');
+        details.forEach(detail => {
+            if (category === 'all' || detail.dataset.category === category) {
+                detail.removeAttribute('hidden');
+            } else {
+                detail.setAttribute('hidden', '');
+            }
+        });
+        // open first details in category in list; close all others
+        for (let i = 0; i < details.length; i++) {
+            if (details[i].dataset.category === category) {
+                details[i].removeAttribute('hidden');
+                details[i].open = true;
+                for (let j = 0; j < details.length; j++) {
+                    if (j !== i) {
+                        details[j].open = false;
+                    }
+                }
+                break;
+            }
+        }
+        var promptsHeading = document.getElementById('prompts-heading');
+        if (category === 'all') {
+            promptsHeading.textContent = 'All Prompts';
+        } else {
+            promptsHeading.textContent = category + ' Prompts';
+        }
+        if (window.innerWidth < 768) {
+            promptsHeading.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+</script>
+<script>
+    document.querySelector('#compare').addEventListener('change', function() {
+        const selectedModel = this.value;
+        var currentModel = "{{ model_name }}".toLowerCase().replace(/\s+/g, '-').replace(/\./g, '-');
+        if (selectedModel) {
+            // use value
+            var slug = selectedModel.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '-');
+            window.location.href = slug;
+        }
+    });
+</script>
+{% endblock %}

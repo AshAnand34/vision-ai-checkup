@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-violet-700/10;
+}
+
+.link {
+  @apply text-violet-700 transition-colors;
+}
+.link:hover {
+  @apply text-violet-800;
+}
+
+.rich-text {
+  @apply prose prose-sm prose-zinc prose-a:text-violet-700 hover:prose-a:text-violet-800 transition-colors;
+}
+
+.container {
+  @apply max-w-2xl mx-auto px-4;
+}
+
+.container-wide {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+.model-row {
+  @apply flex flex-nowrap min-w-80 gap-4 px-4 py-2 border-t border-zinc-200 text-zinc-600 hover:bg-zinc-50;
+}
+
+.model-row.hidden {
+  @apply !hidden;
+}
+
+.card {
+  @apply w-full p-4 bg-white rounded-lg shadow-sm;
+}
+
+.card-prompt {
+  @apply card flex flex-col justify-between gap-3 leading-tight text-zinc-900 transition-transform duration-300 will-change-transform;
+}
+
+.card-prompt:hover {
+  @apply -translate-y-1;
+}
+
+.card-prompt img {
+  @apply w-full rounded-lg;
+}
+
+.btn-lg-outline {
+  @apply inline-flex items-center gap-2 px-4 h-12 text-sm rounded-md shadow-sm text-zinc-600 whitespace-nowrap bg-transparent border border-zinc-200  hover:border-zinc-300 transition-all;
+}
+.btn-lg-primary {
+  @apply inline-flex items-center gap-2 px-4 h-12 text-sm rounded-md shadow-sm text-white whitespace-nowrap bg-violet-700 border border-violet-700  hover:bg-violet-800 hover:border-violet-800 transition-all;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 px-4 h-10 text-sm rounded-md shadow-sm text-white whitespace-nowrap bg-violet-700 border border-violet-700  hover:bg-violet-800 hover:border-violet-800 transition-all;
+}
+
+.btn-sm {
+  @apply flex items-center h-8 text-xs px-4 py-1 rounded-md text-white whitespace-nowrap bg-violet-700 hover:bg-violet-800 transition-all;
+}
+
+.btn-pill {
+  @apply flex items-center h-8 text-xs px-4 py-1 rounded-md shadow-sm bg-white text-zinc-600 whitespace-nowrap hover:text-zinc-900 transition-colors;
+}
+
+.btn-pill.active {
+  @apply text-violet-700;
+}
+
+.h1 {
+  @apply text-3xl font-mono text-slate-900;
+}
+
+.h2 {
+  @apply text-xl font-mono text-slate-900;
+}
+
+.select-wrap {
+  @apply relative;
+}
+
+.select-wrap::after {
+  @apply absolute top-1/2 right-4 w-4 h-4 -translate-y-1/2;
+  background-image: url("../images/svg/angles-up-down.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  content: "";
+}
+
+.select {
+  @apply w-full px-4 py-3 border border-zinc-200 rounded-lg appearance-none shadow-sm text-zinc-900 cursor-pointer;
+}
+
+.bkg-img {
+  width: 100vw;
+  position: fixed;
+  overflow: hidden;
+  inset: 0 0 0 0;
+  z-index: 0;
+}
+
+.bkg-img-adjustable-glasses {
+  position: absolute;
+  top: 120px;
+  left: -15rem;
+  width: 100%;
+  max-width: 28rem;
+  height: auto;
+  transform: rotate(-10deg);
+  opacity: 0.5;
+}
+
+.bkg-img-eye-chart {
+  position: absolute;
+  top: 140px;
+  right: -2rem;
+  width: 100%;
+  max-width: 12rem;
+  height: auto;
+  transform: rotate(0deg);
+  opacity: 0.5;
+}
+
+.bkg-img-clipboard {
+  position: absolute;
+  bottom: 40px;
+  left: -15rem;
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+  opacity: 0.5;
+}
+
+.bkg-img-lenses {
+  position: absolute;
+  bottom: 80px;
+  right: 4rem;
+  width: 100%;
+  max-width: 10rem;
+  height: auto;
+  opacity: 0.5;
+}

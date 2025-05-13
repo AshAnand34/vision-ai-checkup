@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Document Understanding Models - Vision AI Checkup</title>
+
+    <link rel="icon" href="/images/svg/logo-vision-ai-checkup.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono" rel="stylesheet" type="text/css">
+
+    <meta name="og:title" content="Best Document Understanding Models - Vision AI Checkup">
+    
+    <meta name="description" content="Explore the best models for Document Understanding tasks.">
+    <meta name="og:description" content="Explore the best models for Document Understanding tasks.">
+    
+    
+    <meta name="og:image" content="https://vision-ai-assessment.roboflow.com/assets/banner.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="/css/output.css" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6FV0VVEGDG"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6FV0VVEGDG');
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-zinc-100">
+
+    <header class="flex justify-between items-center h-16 px-4 py-2 bg-zinc-50/60 backdrop-blur-sm sticky top-0 z-50">
+        <nav class="w-full flex justify-between items-center gap-4">
+            <a class="flex items-center gap-2" href="/">
+                <img src="/images/svg/logo-vision-ai-checkup.svg" alt="Vision AI Checkup" class="w-6 h-6" />
+                <p>Vision AI Checkup</p>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex items-center gap-4 text-sm">
+                <li><a class="link" href="/">Leaderboard</a></li>
+                <li><a class="link" href="/prompts">Prompts</a></li>
+                <li><a class="link" href="/#about">About</a></li>
+                <li><a class="btn-sm" href="https://github.com/roboflow/vlms">Add a Prompt</a></li>
+            </ul>
+
+            <!-- Mobile Navigation Button -->
+            <button
+                class="md:hidden p-2"
+                aria-label="Toggle menu"
+                onclick="toggleMobileMenu()"
+            >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-50">
+        <div class="flex flex-col h-full">
+            <div class="flex justify-between items-center h-16 min-h-16 px-4 py-2 bg-zinc-50/10">
+                <a class="flex items-center gap-2" href="/">
+                    <img src="/images/svg/logo-vision-ai-checkup.svg" alt="Vision AI Checkup" class="w-6 h-6" />
+                    <p>Vision AI Checkup</p>
+                </a>
+                <button
+                    class="p-2"
+                    aria-label="Close menu"
+                    onclick="toggleMobileMenu()"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col py-6 gap-2 justify-center h-full">
+                <ul class="flex flex-col p-4 gap-2 text-sm">
+                    <li><a class="btn-lg-outline w-full justify-center" href="/" onclick="toggleMobileMenu()">Leaderboard</a></li>
+                    <li><a class="btn-lg-outline w-full justify-center" href="/prompts" onclick="toggleMobileMenu()">Prompts</a></li>
+                    <li><a class="btn-lg-outline w-full justify-center" href="#about" onclick="toggleMobileMenu()">About</a></li>
+                    <li><a class="btn-lg-primary w-full justify-center" href="https://github.com/roboflow/vlms">Add a Prompt</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bkg-img">
+        <img src="/images/svg/adjustable-glasses.svg" alt="adjustable glasses illustration" class="bkg-img-adjustable-glasses">
+        <img src="/images/svg/eye-chart.svg" alt="eye chart illustration" class="bkg-img-eye-chart">
+        <img src="/images/svg/clipboard.svg" alt="clipboard illustration" class="bkg-img-clipboard">
+        <img src="/images/svg/lenses.svg" alt="lenses illustration" class="bkg-img-lenses">
+    </div>
+
+    <main class="flex flex-col flex-grow gap-10 py-12 relative z-10"  >
+        
+<section class="leaderboard">
+    <div class="container">
+        <h1 class="h1 mb-3">Vision AI Checkup</h1>
+        
+        <p>Explore the best models for Document Understanding tasks.</p>
+        
+        <br>
+            <label class="sr-only" for="model-select">Explore by task</label>
+            <div class="select-wrap mb-3">
+                <select id="model-select" class="select">
+                    <option value="all">Best overall</option>
+                    
+                        <option value="annotation-understanding" >Annotation Understanding</option>
+                    
+                        <option value="captcha" >CAPTCHA</option>
+                    
+                        <option value="color-identification" >Color Identification</option>
+                    
+                        <option value="defect-detection" >Defect Detection</option>
+                    
+                        <option value="document-understanding" selected>Document Understanding</option>
+                    
+                        <option value="localization" >Localization</option>
+                    
+                        <option value="ocr" >OCR</option>
+                    
+                        <option value="object-counting" >Object Counting</option>
+                    
+                        <option value="object-detection" >Object Detection</option>
+                    
+                        <option value="object-measurement" >Object Measurement</option>
+                    
+                        <option value="object-understanding" >Object Understanding</option>
+                    
+                        <option value="receipt-reading" >Receipt Reading</option>
+                    
+                        <option value="sign-understanding" >Sign Understanding</option>
+                    
+                        <option value="spatial-relations" >Spatial Relations</option>
+                    
+                        <option value="web-action-understanding" >Web Action Understanding</option>
+                    
+                </select>
+            </div>
+
+        <div class="mb-2 text-sm text-zinc-600">
+            Run on 7 prompts.
+        </div>
+        <div role="table" class="w-full bg-white rounded-lg overflow-hidden overflow-x-auto shadow-sm text-sm mb-3">
+            <div role="row" class="flex flex-nowrap min-w-80 gap-4 font-medium px-4 py-2 text-zinc-900">
+                <div class="flex-1">Model</div>
+                <div class="w-14">Score</div>
+                <div class="w-14">Time</div>
+            </div>
+            
+                <a role="row" class="model-row " href="/gemini-2-0-flash/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#1 <img src="https://www.google.com/favicon.ico" class="w-4 h-4"> Gemini 2.0 Flash</div>
+                    <div class="w-14">83.3%</div>
+                    <div class="w-14">
+                        
+                    </div>
+                </a>
+            
+                <a role="row" class="model-row " href="/claude-3-5-haiku/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#1 <img src="https://www.anthropic.com/favicon.ico" class="w-4 h-4"> Claude 3.5 Haiku</div>
+                    <div class="w-14">83.3%</div>
+                    <div class="w-14">
+                        
+                    </div>
+                </a>
+            
+                <a role="row" class="model-row " href="/gemini-2-5-flash-preview/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#1 <img src="https://www.google.com/favicon.ico" class="w-4 h-4"> Gemini 2.5 Flash Preview</div>
+                    <div class="w-14">83.3%</div>
+                    <div class="w-14">
+                        
+                    </div>
+                </a>
+            
+                <a role="row" class="model-row " href="/gemini-2-5-pro-preview/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#1 <img src="https://www.google.com/favicon.ico" class="w-4 h-4"> Gemini 2.5 Pro Preview</div>
+                    <div class="w-14">83.3%</div>
+                    <div class="w-14">
+                        
+                    </div>
+                </a>
+            
+                <a role="row" class="model-row " href="/claude-3-7-sonnet/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#1 <img src="https://www.anthropic.com/favicon.ico" class="w-4 h-4"> Claude 3.7 Sonnet</div>
+                    <div class="w-14">83.3%</div>
+                    <div class="w-14">
+                        
+                    </div>
+                </a>
+            
+                <a role="row" class="model-row " href="/openai-o1/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#1 <img src="https://openai.com/favicon.ico" class="w-4 h-4"> OpenAI O1</div>
+                    <div class="w-14">83.3%</div>
+                    <div class="w-14">
+                        
+                    </div>
+                </a>
+            
+                <a role="row" class="model-row " href="/gpt-4-1/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#2 <img src="https://openai.com/favicon.ico" class="w-4 h-4"> GPT-4.1</div>
+                    <div class="w-14">66.7%</div>
+                    <div class="w-14">
+                        
+                    </div>
+                </a>
+            
+                <a role="row" class="model-row " href="/gemini-2-0-flash-lite/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#2 <img src="https://www.google.com/favicon.ico" class="w-4 h-4"> Gemini 2.0 Flash Lite</div>
+                    <div class="w-14">66.7%</div>
+                    <div class="w-14">
+                        
+                    </div>
+                </a>
+            
+                <a role="row" class="model-row " href="/gpt-4-1-mini/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#2 <img src="https://openai.com/favicon.ico" class="w-4 h-4"> GPT-4.1 Mini</div>
+                    <div class="w-14">66.7%</div>
+                    <div class="w-14">
+                        
+                    </div>
+                </a>
+            
+                <a role="row" class="model-row " href="/openai-o4-mini/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#2 <img src="https://openai.com/favicon.ico" class="w-4 h-4"> OpenAI O4 Mini</div>
+                    <div class="w-14">66.7%</div>
+                    <div class="w-14">
+                        
+                    </div>
+                </a>
+            
+                <a role="row" class="model-row hidden" href="/cohere-aya-vision-32b/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#3 <img src="https://cohere.com/favicon.ico" class="w-4 h-4"> Cohere Aya Vision 32B</div>
+                    <div class="w-14">50.0%</div>
+                    <div class="w-14">
+                        
+                    </div>
+                </a>
+            
+                <a role="row" class="model-row hidden" href="/chatgpt-4o/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#3 <img src="https://openai.com/favicon.ico" class="w-4 h-4"> ChatGPT-4o</div>
+                    <div class="w-14">50.0%</div>
+                    <div class="w-14">
+                        
+                    </div>
+                </a>
+            
+                <a role="row" class="model-row hidden" href="/gpt-4-1-nano/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#3 <img src="https://openai.com/favicon.ico" class="w-4 h-4"> GPT-4.1 Nano</div>
+                    <div class="w-14">50.0%</div>
+                    <div class="w-14">
+                        
+                    </div>
+                </a>
+            
+                <a role="row" class="model-row hidden" href="/cohere-aya-vision-8b/">
+                    <div class="flex flex-nowrap items-center flex-1 gap-1 whitespace-nowrap text-violet-700">#3 <img src="https://cohere.com/favicon.ico" class="w-4 h-4"> Cohere Aya Vision 8B</div>
+                    <div class="w-14">50.0%</div>
+                    <div class="w-14">
+                        
+                    </div>
+                </a>
+            
+        </div>
+
+        <button id="toggle-more-btn" type="button" class="link">
+            Show more models
+        </button>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="h2 mb-1">Explore Prompts</h2>
+        <div class="text-zinc-600">Explore the prompts we run as part of the Vision AI Checkup.</div>
+        <div class="text-sm text-zinc-600 mb-3">(p.s.: you can add your own too!)</div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
+            
+                <a class="card-prompt" href="/assessments/read-dimensions-on-a-floor-plan/">
+                    <div>What are the dimensions of the living area? Return in format 11'1 X 11'1.</div>
+                    <div class="aspect-square overflow-hidden">
+                        <img
+                            class="w-full h-full object-cover"
+                            src="/images/compressed/floor_plan.jpeg"
+                            alt="Read dimensions on a floor plan"
+                        >
+                    </div>
+                </a>
+            
+                <a class="card-prompt" href="/assessments/torn-receipt-reading/">
+                    <div>What is the subtotal of the receipt? Return only the amount like $1.00 and no other text.</div>
+                    <div class="aspect-square overflow-hidden">
+                        <img
+                            class="w-full h-full object-cover"
+                            src="/images/compressed/receipt_subtotal_tear.jpeg"
+                            alt="Torn receipt reading"
+                        >
+                    </div>
+                </a>
+            
+                <a class="card-prompt" href="/assessments/table-understanding/">
+                    <div>What is the adjusted EBITDA in the nine months ended September 2023 (in millions)?</div>
+                    <div class="aspect-square overflow-hidden">
+                        <img
+                            class="w-full h-full object-cover"
+                            src="/images/compressed/table_understanding.jpeg"
+                            alt="Table understanding"
+                        >
+                    </div>
+                </a>
+            
+                <a class="card-prompt" href="/assessments/table-understanding-from-a-web-catalog/">
+                    <div>What is the package quantity of 90183A308? Return only a number. If SKU does not exist, return NULL.</div>
+                    <div class="aspect-square overflow-hidden">
+                        <img
+                            class="w-full h-full object-cover"
+                            src="/images/compressed/screenshot_web_catalog.jpeg"
+                            alt="Table understanding from a web catalog"
+                        >
+                    </div>
+                </a>
+            
+                <a class="card-prompt" href="/assessments/table-understanding-from-a-web-catalog--sku-does-not-exist-/">
+                    <div>What is the package quantity of 90183A308? Return only a number. If SKU does not exist, return NULL.</div>
+                    <div class="aspect-square overflow-hidden">
+                        <img
+                            class="w-full h-full object-cover"
+                            src="/images/compressed/screenshot_web_catalog.jpeg"
+                            alt="Table understanding from a web catalog (SKU does not exist)"
+                        >
+                    </div>
+                </a>
+            
+                <a class="card-prompt" href="/assessments/point-a-line-flattens-on-a-graph/">
+                    <div>At what epoch does the line start to flatten out? Return only the epoch number, like 99.</div>
+                    <div class="aspect-square overflow-hidden">
+                        <img
+                            class="w-full h-full object-cover"
+                            src="/images/compressed/epoch_flat.jpeg"
+                            alt="Point a line flattens on a graph"
+                        >
+                    </div>
+                </a>
+            
+        </div>
+        <a class="link" href="/prompts/">
+            Explore all 7 prompts →
+        </a>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="h2 mb-3" id="about">About the Assessment</h2>
+        <div class="card">
+            <div class="rich-text">
+                <p>The Roboflow vision AI assessment measures how well new multimodal models perform at real world use cases.</p>
+                <p>Our assessment consists of dozens of images, questions, and answers that we benchmark against models. We run the assessment every time we add a new model to the leaderboard.</p>
+                <p>You can use the vision AI assessment to gauge how well a model does generally, without having to understand a complex benchmark with thousands of data points.</p>
+                <p>The assessment and models are constantly evolving. This means that as more tasks get added or models receive updates, we can build a clearer picture of the current state-of-the-art models in real-time.</p>
+                <p><a href="https://github.com/roboflow/vlm-assessment">All of our assessment code is open source</a>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="h2 mb-3">Contribute a Prompt</h2>
+        <div class="flex items-center gap-2 card">
+            <img class="w-6 h-6" src="/images/svg/lightbulb.svg" alt="Lightbulb">
+            <div class="rich-text">Have an idea for a prompt? <a href="https://github.com/roboflow/vlm-assessment">Open a pull request on the project repository!</a></div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+
+    <footer class="py-4">
+        <div class="container">
+            <div class="text-center text-xs">Made with 💜 by <a href="https://roboflow.com">Roboflow</a>.</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            // Only play animation if not already played in this session
+            if (!sessionStorage.getItem('bkgAnimationPlayed')) {
+                const duration = 1;
+                gsap.fromTo(".bkg-img-adjustable-glasses", {
+                    x: '-30rem',
+                    y: '-30rem',
+                    opacity: 0,
+                    filter: 'blur(20px)',
+                    ease: "power2.inOut"
+                }, {
+                    x: '0rem',
+                    y: '0rem',
+                    opacity: 0.5,
+                    filter: 'blur(0px)',
+                    duration: duration,
+                });
+                gsap.fromTo(".bkg-img-eye-chart", {
+                    x: '12rem',
+                    y: '-12rem',
+                    opacity: 0,
+                    filter: 'blur(20px)',
+                    ease: "power2.inOut"
+                }, {
+                    x: '0rem',
+                    y: '0rem',
+                    opacity: 0.5,
+                    filter: 'blur(0px)',
+                    duration: duration,
+                });
+                gsap.fromTo(".bkg-img-clipboard", {
+                    x: '-30rem',
+                    y: '30rem',
+                    duration: 1,
+                    opacity: 0,
+                    filter: 'blur(20px)',
+                    ease: "power2.inOut"
+                }, {
+                    x: '0rem',
+                    y: '0rem',
+                    opacity: 0.3,
+                    filter: 'blur(0px)',
+                    duration: duration,
+                });
+                gsap.fromTo(".bkg-img-lenses", {
+                    x: '10rem',
+                    y: '10rem',
+                    opacity: 0,
+                    filter: 'blur(20px)',
+                    ease: "power2.inOut"
+                }, {
+                    x: '0rem',
+                    y: '0rem',
+                    opacity: 0.5,
+                    filter: 'blur(0px)',
+                    duration: duration,
+                });
+
+                // Mark animation as played for this session
+                sessionStorage.setItem('bkgAnimationPlayed', 'true');
+            }
+        });
+    </script>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = menu.classList.contains('hidden') ? '' : 'hidden';
+        }
+
+        // Add click event listeners to all mobile menu links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+    </script>
+
+    
+    <script>
+        // on change of form, redirect to /task/task-name (all lower)
+        document.querySelector('#model-select').addEventListener('change', function() {
+            const task = this.value;
+            if (task === 'all') {
+                window.location.href = './';
+            } else {
+                window.location.href = `./${task.toLowerCase().replace(/\\s+/g, '_')}.html`;
+            }
+        });
+        const btn = document.getElementById('toggle-more-btn');
+        if (btn) {
+            btn.onclick = function toggleMore() {
+                const hiddenRows = document.querySelectorAll('.model-row.hidden');
+                const extraRows = document.querySelectorAll('.model-row:not(:nth-child(-n+11))');
+                const isHidden = hiddenRows.length > 0;
+
+                extraRows.forEach(row => row.classList.toggle('hidden', !isHidden));
+                btn.textContent = isHidden ? 'Show fewer models' : 'Show more models';
+            };
+        }
+    </script>
+
+</body>
+</html>

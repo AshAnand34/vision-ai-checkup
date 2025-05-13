@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottle on wrong shelf - Vision AI Checkup</title>
+
+    <link rel="icon" href="/images/svg/logo-vision-ai-checkup.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono" rel="stylesheet" type="text/css">
+
+    <meta name="og:title" content="Bottle on wrong shelf - Vision AI Checkup">
+    
+    <meta name="description" content="See how LLMs, foundation models, and VLMs do on vision tasks.">
+    <meta name="og:description" content="See how LLMs, foundation models, and VLMs do on vision tasks.">
+    
+    
+    <meta name="og:image" content="https://vision-ai-assessment.roboflow.com/assets/banner.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="/css/output.css" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6FV0VVEGDG"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6FV0VVEGDG');
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-zinc-100">
+
+    <header class="flex justify-between items-center h-16 px-4 py-2 bg-zinc-50/60 backdrop-blur-sm sticky top-0 z-50">
+        <nav class="w-full flex justify-between items-center gap-4">
+            <a class="flex items-center gap-2" href="/">
+                <img src="/images/svg/logo-vision-ai-checkup.svg" alt="Vision AI Checkup" class="w-6 h-6" />
+                <p>Vision AI Checkup</p>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex items-center gap-4 text-sm">
+                <li><a class="link" href="/">Leaderboard</a></li>
+                <li><a class="link" href="/prompts">Prompts</a></li>
+                <li><a class="link" href="/#about">About</a></li>
+                <li><a class="btn-sm" href="https://github.com/roboflow/vlms">Add a Prompt</a></li>
+            </ul>
+
+            <!-- Mobile Navigation Button -->
+            <button
+                class="md:hidden p-2"
+                aria-label="Toggle menu"
+                onclick="toggleMobileMenu()"
+            >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-50">
+        <div class="flex flex-col h-full">
+            <div class="flex justify-between items-center h-16 min-h-16 px-4 py-2 bg-zinc-50/10">
+                <a class="flex items-center gap-2" href="/">
+                    <img src="/images/svg/logo-vision-ai-checkup.svg" alt="Vision AI Checkup" class="w-6 h-6" />
+                    <p>Vision AI Checkup</p>
+                </a>
+                <button
+                    class="p-2"
+                    aria-label="Close menu"
+                    onclick="toggleMobileMenu()"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col py-6 gap-2 justify-center h-full">
+                <ul class="flex flex-col p-4 gap-2 text-sm">
+                    <li><a class="btn-lg-outline w-full justify-center" href="/" onclick="toggleMobileMenu()">Leaderboard</a></li>
+                    <li><a class="btn-lg-outline w-full justify-center" href="/prompts" onclick="toggleMobileMenu()">Prompts</a></li>
+                    <li><a class="btn-lg-outline w-full justify-center" href="#about" onclick="toggleMobileMenu()">About</a></li>
+                    <li><a class="btn-lg-primary w-full justify-center" href="https://github.com/roboflow/vlms">Add a Prompt</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bkg-img">
+        <img src="/images/svg/adjustable-glasses.svg" alt="adjustable glasses illustration" class="bkg-img-adjustable-glasses">
+        <img src="/images/svg/eye-chart.svg" alt="eye chart illustration" class="bkg-img-eye-chart">
+        <img src="/images/svg/clipboard.svg" alt="clipboard illustration" class="bkg-img-clipboard">
+        <img src="/images/svg/lenses.svg" alt="lenses illustration" class="bkg-img-lenses">
+    </div>
+
+    <main class="flex flex-col flex-grow gap-10 py-12 relative z-10"  class="max-w-[75rem] mx-auto flex gap-6 relative z-10">
+        
+<div class="w-full max-w-[75rem] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+    <div class="relative">
+        <div class="flex flex-col gap-6 sticky top-20">
+
+        <section>
+            <h1 class="h1">Prompt: Bottle on wrong shelf</h1>
+            <div class="mb-3">12 out of 14 models answer this prompt correctly.</div>
+
+            <div class="card flex flex-col gap-4">
+                <div class=" text-zinc-600">
+                    <div><span class="font-semibold text-zinc-900">Prompt</span>: Are any bottles on the wrong shelf? If yes, say the name of the brand of the bottle on the wrong shelf like Coca-Cola.</div>
+                    <div><span class="font-semibold text-zinc-900">Answer</span>: Fiji</div>
+                    <div><span class="font-semibold text-zinc-900">Submitted by</span>: <a href="https://roboflow.com">Roboflow</a></div>
+                </div>
+                <img class="rounded-lg" src="/images/compressed/misplaced_bottles.jpeg" alt="Bottle on wrong shelf" style="max-width: 100%; height: auto;">
+            </div>
+        </section>
+
+        <section>
+            <h2 class="h2 mb-3">Contribute a Prompt</h2>
+            <div class="flex items-center gap-2 card">
+                <img class="w-6 h-6" src="/images/svg/lightbulb.svg" alt="Lightbulb">
+                <div class="rich-text">Have an idea for a prompt? <a href="https://github.com/roboflow/vlm-assessment">Open a pull request on the project repository!</a></div>
+            </div>
+        </section>
+    </div>
+
+    </div>
+    <section>
+        <h2 class="h2 mb-3 md:mt-[44px]">How models perform on this prompt</h2>
+        <div class="flex flex-col gap-2">
+            
+                <details class="card cursor-pointer group">
+                    <summary open class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            
+                            ChatGPT-4o
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: Yes, there is a bottle on the wrong shelf. A **Fiji** water bottle is on the bottom shelf among the Deer Park bottles.</p>
+                            <p><a href="/chatgpt-4o/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            
+                <details class="card cursor-pointer group">
+                    <summary  class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            
+                            Claude 3.5 Haiku
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: Yes, there is a bottle that appears to be on the wrong shelf. The Fiji water bottles (which have a distinctive square shape and blue cap) are mixed in with what seem to be other water brands on different shelves.</p>
+                            <p><a href="/claude-3-5-haiku/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            
+                <details class="card cursor-pointer group">
+                    <summary  class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            
+                            Cohere Aya Vision 32B
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: Yes, there are bottles on the wrong shelf. The brand of the bottle on the wrong shelf is Fiji.</p>
+                            <p><a href="/cohere-aya-vision-32b/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            
+                <details class="card cursor-pointer group">
+                    <summary  class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            
+                            Cohere Aya Vision 8B
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: Based on the image provided, it appears that all the bottles are neatly arranged on their respective shelves. There are no bottles that seem to be placed on the wrong shelf. The brands visible include Fiji Water, Dasani, and Sprite, among others.</p>
+                            <p><a href="/cohere-aya-vision-8b/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            
+                <details class="card cursor-pointer group">
+                    <summary  class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            
+                            GPT-4.1
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: Yes, there is a bottle on the wrong shelf. There is a **Fiji** bottle on the bottom shelf, which is otherwise stocked with **Poland Spring** bottles.</p>
+                            <p><a href="/gpt-4-1/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            
+                <details class="card cursor-pointer group">
+                    <summary  class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            
+                            GPT-4.1 Nano
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: Yes, there are bottles on the wrong shelf. The bottles of Fiji water are on the wrong shelf; they are typically found on the bottom shelf, but in this image, they are on the middle shelf.</p>
+                            <p><a href="/gpt-4-1-nano/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            
+                <details class="card cursor-pointer group">
+                    <summary  class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            
+                            Gemini 2.0 Flash
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: Yes, Fiji and Poland Spring.</p>
+                            <p><a href="/gemini-2-0-flash/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            
+                <details class="card cursor-pointer group">
+                    <summary  class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            
+                            Gemini 2.0 Flash Lite
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: Yes, Fiji is on the wrong shelf.</p>
+                            <p><a href="/gemini-2-0-flash-lite/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            
+                <details class="card cursor-pointer group">
+                    <summary  class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            
+                            Gemini 2.5 Flash Preview
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: Yes, there are bottles on the wrong shelf.
+
+FIJI</p>
+                            <p><a href="/gemini-2-5-flash-preview/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            
+                <details class="card cursor-pointer group">
+                    <summary  class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            
+                            Gemini 2.5 Pro Preview
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: Yes, Fiji.</p>
+                            <p><a href="/gemini-2-5-pro-preview/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            
+                <details class="card cursor-pointer group">
+                    <summary  class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            
+                            OpenAI O1
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: It appears that one Fiji bottle is placed on a lower shelf among the other (green‐labeled) water bottles, which looks to be out of place.</p>
+                            <p><a href="/openai-o1/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            
+                <details class="card cursor-pointer group">
+                    <summary  class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="88 136 112 160 168 104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            
+                            OpenAI O4 Mini
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: Yes. There are Poland Spring bottles mixed in on the Fiji‐water shelf.</p>
+                            <p><a href="/openai-o4-mini/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            
+                <details class="card cursor-pointer group">
+                    <summary  class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            
+                                <svg class="w-6 h-6 text-rose-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><line x1="160" y1="96" x2="96" y2="160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="96" y1="96" x2="160" y2="160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            
+                            Claude 3.7 Sonnet
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: From what I can see in the image, there don't appear to be any bottles on the wrong shelf. The refrigerator display shows several shelves of bottled water that seem to be properly organized. The bottles appear to be various brands of water, with similar types grouped together on each shelf. There's a price tag visible showing "$3" on one of the shelves. All bottles seem to be in their designated places within the refrigerated display case.</p>
+                            <p><a href="/claude-3-7-sonnet/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            
+                <details class="card cursor-pointer group">
+                    <summary  class="flex justify-between items-center">
+
+                        <div class="flex items-center gap-2">
+                            
+                                <svg class="w-6 h-6 text-rose-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><line x1="160" y1="96" x2="96" y2="160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="96" y1="96" x2="160" y2="160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
+                            
+                            GPT-4.1 Mini
+                        </div>
+                        <svg class="w-6 h-6 text-zinc-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="flex flex-col gap-4">
+                        <div class="rich-text">
+                            <p>Model answer: Yes, the brand "Dasani" is on the wrong shelf. It is placed on the shelf with "Poland Spring" bottles.</p>
+                            <p><a href="/gpt-4-1-mini/">View more tests run on this model</a></p>
+                        </div>
+                    </div>
+                </details>
+            
+        </div>
+    </section>
+</div>
+
+
+    </main>
+
+
+    <footer class="py-4">
+        <div class="container">
+            <div class="text-center text-xs">Made with 💜 by <a href="https://roboflow.com">Roboflow</a>.</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            // Only play animation if not already played in this session
+            if (!sessionStorage.getItem('bkgAnimationPlayed')) {
+                const duration = 1;
+                gsap.fromTo(".bkg-img-adjustable-glasses", {
+                    x: '-30rem',
+                    y: '-30rem',
+                    opacity: 0,
+                    filter: 'blur(20px)',
+                    ease: "power2.inOut"
+                }, {
+                    x: '0rem',
+                    y: '0rem',
+                    opacity: 0.5,
+                    filter: 'blur(0px)',
+                    duration: duration,
+                });
+                gsap.fromTo(".bkg-img-eye-chart", {
+                    x: '12rem',
+                    y: '-12rem',
+                    opacity: 0,
+                    filter: 'blur(20px)',
+                    ease: "power2.inOut"
+                }, {
+                    x: '0rem',
+                    y: '0rem',
+                    opacity: 0.5,
+                    filter: 'blur(0px)',
+                    duration: duration,
+                });
+                gsap.fromTo(".bkg-img-clipboard", {
+                    x: '-30rem',
+                    y: '30rem',
+                    duration: 1,
+                    opacity: 0,
+                    filter: 'blur(20px)',
+                    ease: "power2.inOut"
+                }, {
+                    x: '0rem',
+                    y: '0rem',
+                    opacity: 0.3,
+                    filter: 'blur(0px)',
+                    duration: duration,
+                });
+                gsap.fromTo(".bkg-img-lenses", {
+                    x: '10rem',
+                    y: '10rem',
+                    opacity: 0,
+                    filter: 'blur(20px)',
+                    ease: "power2.inOut"
+                }, {
+                    x: '0rem',
+                    y: '0rem',
+                    opacity: 0.5,
+                    filter: 'blur(0px)',
+                    duration: duration,
+                });
+
+                // Mark animation as played for this session
+                sessionStorage.setItem('bkgAnimationPlayed', 'true');
+            }
+        });
+    </script>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = menu.classList.contains('hidden') ? '' : 'hidden';
+        }
+
+        // Add click event listeners to all mobile menu links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+    </script>
+
+    
+
+    
+</body>
+</html>

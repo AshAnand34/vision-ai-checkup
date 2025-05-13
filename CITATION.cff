@@ -1,0 +1,21 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Vision AI Checkup
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Roboflow
+    email: support@roboflow.com
+repository-code: 'https://github.com/roboflow/vision-ai-checkup'
+url: 'https://visioncheckup.com'
+abstract: >-
+  Evaluating vision models on real-world problems.
+keywords:
+  - computer vision
+  - vision language model
+  - vlm
+license: MIT

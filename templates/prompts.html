@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section>
+    <div class="container-wide">
+        <div class="flex flex-col items-start gap-2 sm:flex-row sm:justify-between sm:items-center sm:gap-8 mb-6">
+            <div class="">
+                <h1 class="h1">Explore Prompts</h1>
+                <div class="">Explore the prompts we run as part of the Vision AI Checkup.</div>
+            </div>
+            <a class="btn-primary" href="https://github.com/roboflow/vlms">Add a Prompt</a>
+        </div>
+
+        <div class="flex flex-wrap gap-2 items-center mb-6">
+            <div>Filter by task</div>
+            <div class="flex flex-wrap gap-2">
+                    <a class="btn-pill" data-category="All" href="./?category=All">All ({{ assessment_count }})</a>
+                {% for category in tasks %}
+                    <a class="btn-pill" data-category="{{ category }}" href="./?category={{ category }}">{{ category }} ({{ task_counts[category] }})</a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="mb-2 text-sm">Showing <span id="task-count">{{ assessment_count }}</span> prompts.</div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {% for assessment in assessments %}
+                <a class="card-prompt" href="/assessments/{{ assessment['slug'] }}/" data-category="{{ assessment['category'] }}">
+                    <div>{{ assessment["prompt"] }}</div>
+                    <div class="aspect-square overflow-hidden">
+                        <img
+                            class="w-full h-full object-cover"
+                            src="/images/compressed/{{ assessment['file_name'].replace(".png", ".jpeg") }}"
+                            alt="{{ assessment['assessment_name'] }}"
+                        >
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container-wide">
+        <h2 class="h2 mb-3">Contribute a Prompt</h2>
+        <div class="flex items-center gap-2 card">
+            <img class="w-6 h-6" src="/images/svg/lightbulb.svg" alt="Lightbulb">
+            <div class="rich-text">Have an idea for a prompt? <a href="https://github.com/roboflow/vlm-assessment">Open a pull request on the project repository!</a></div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+    function filterPrompts(category) {
+        // Normalize the category for comparison
+        const normalizedCategory = category ? decodeURIComponent(category).toLowerCase().trim() : 'all';
+
+        // Filter the prompt cards
+        const promptCards = document.querySelectorAll('a.card-prompt[data-category]');
+        promptCards.forEach(card => {
+            const cardCategory = card.dataset.category ? card.dataset.category.toLowerCase().trim() : '';
+            if (normalizedCategory === 'all' || cardCategory === normalizedCategory) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Update active state for filter buttons
+        document.querySelectorAll('a.btn-pill[data-category]').forEach(link => {
+            const linkCategory = link.dataset.category ? link.dataset.category.toLowerCase().trim() : '';
+            if ((normalizedCategory === 'all' && linkCategory === 'all') ||
+                linkCategory === normalizedCategory) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        // Update the count - only count prompt cards
+        const taskCount = document.getElementById('task-count');
+        const visibleCards = Array.from(promptCards)
+            .filter(card => card.style.display !== 'none');
+        taskCount.textContent = visibleCards.length;
+    }
+
+    // Set up initial filter based on URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category') || 'all';
+    filterPrompts(category);
+</script>
+{% endblock %}
