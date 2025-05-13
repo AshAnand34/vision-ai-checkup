@@ -40,10 +40,10 @@ python3 assess.py
 
 You can contribute an assessment to add to the Vision AI assessment suite.
 
-To contribute an assessment, first clone this project:
+To contribute an assessment, first fork the project and clone it locally:
 
 ```
-git clone https://github.com/roboflow/vision-ai-checkup
+git clone https://github.com/<your-github-username>/vision-ai-checkup
 ```
 
 Then:
