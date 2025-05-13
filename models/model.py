@@ -11,7 +11,6 @@ class Model:
         retries: int = 3,
     ):
         for attempt in range(retries):
-
             try:
                 return self.run(
                     image,
@@ -21,7 +20,8 @@ class Model:
                 )
             except Exception as e:
                 if attempt < retries - 1:
-                    print(f"Attempt {attempt + 1} failed: {e}. Retrying...")
+                    print(f"Attempt {attempt + 1} failed: {e}. Retrying... model, {self.__class__.__name__}")
+                    continue
                 else:
                     print(f"All attempts failed: {e}")
                     return None

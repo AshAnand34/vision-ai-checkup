@@ -51,7 +51,7 @@
                         >
                             <div
                                 class="h-full bg-emerald-300 rounded-full transition-all duration-300"
-                                style="width: {{ (value['model1']['passed'] / value['model1']['total'] * 100)|round }}%;"
+                                {% if value['model1']['total'] == 0 %}style="width: 0%;"{% else %}style="width: {{ (value['model1']['passed'] / value['model1']['total'] * 100)|round }}%;" {% endif %}
                             ></div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                         >
                             <div
                                 class="h-full bg-emerald-300 rounded-full transition-all duration-300"
-                                style="width: {{ (value['model2']['passed'] / value['model2']['total'] * 100)|round }}%;"
+                                {% if value['model2']['total'] == 0 %}style="width: 0%;"{% else %}style="width: {{ (value['model2']['passed'] / value['model2']['total'] * 100)|round }}%;" {% endif %}
                             ></div>
                         </div>
                     </div>
