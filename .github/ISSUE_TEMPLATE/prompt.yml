@@ -1,5 +1,5 @@
-name: Submit a prompt
-description: Submit a prompt
+name: Submit a prompt 📝
+description: Submit a prompt 📝
 labels: [question]
 body:
   - type: input
@@ -15,7 +15,7 @@ body:
       label: Image to use
       description: Drop in the image file (paste or URL)
       placeholder: |
-        💡 ProTip! You can paste an image or its URL here.
+        You can paste an image or its URL here.
     validations:
       required: false
 
