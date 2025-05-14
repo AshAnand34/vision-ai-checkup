@@ -1,0 +1,38 @@
+name: Submit a prompt
+description: Submit a prompt
+labels: [question]
+body:
+  - type: input
+    attributes:
+      label: Assessment name
+      description: Something that summarises what you want your assessment to do (e.g. “Count screws”)
+      placeholder: Count screws
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Image to use
+      description: Drop in the image file (paste or URL)
+      placeholder: |
+        💡 ProTip! You can paste an image or its URL here.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Prompt
+      description: What prompt do you want to use?
+      placeholder: |
+        Enter the prompt you’d like the model to run.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Correct answer
+      description: What is the correct answer?
+      placeholder: |
+        Specify the expected correct answer here.
+    validations:
+      required: true
