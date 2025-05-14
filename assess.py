@@ -603,7 +603,7 @@ def main():
             failed_count=sum(1 for result in model_results if not result["correct"]),
             total_count=len(model_results),
             title=f"{assessment['assessment_name']} - Vision AI Checkup",
-            description=f"View the results of {assessment['assessment_name']} when run against various SOTA vision models."
+            description=f"View the results of {assessment['assessment_name']} when run against various SOTA vision models.",
             og_image="https://visioncheckup.com" + quote_plus(
                 os.path.join(
                     OUTPUT_DIR,
