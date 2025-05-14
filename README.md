@@ -25,7 +25,9 @@ You will then need API keys for all vendors used in the assessment. You can set 
 export OPENAI_API_KEY=your-key
 export HUGGINGFACE_API_KEY=your-key # used for Llama
 export ANTHROPIC_API_KEY=your-key
-export CO_API_KEY=your-key # you will need a production API key
+export COHERE_API_KEY=your-key # you will need a production API key
+export GEMINI_API_KEY=your-key
+export TOGETHER_API_KEY=your-key
 ```
 
 Then, run:
@@ -40,10 +42,10 @@ python3 assess.py
 
 You can contribute an assessment to add to the Vision AI assessment suite.
 
-To contribute an assessment, first clone this project:
+To contribute an assessment, first fork the project and clone it locally:
 
 ```
-git clone https://github.com/roboflow/vision-ai-checkup
+git clone https://github.com/<your-github-username>/vision-ai-checkup
 ```
 
 Then:

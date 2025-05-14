@@ -16,8 +16,11 @@
     <meta name="description" content="See how LLMs, foundation models, and VLMs do on vision tasks.">
     <meta name="og:description" content="See how LLMs, foundation models, and VLMs do on vision tasks.">
     {% endif %}
-
-    <meta name="og:image" content="https://visioncheckup.com/images/banner.png">
+    {% if og_image %}
+    <meta name="og:image" content="{{ og_image }}/opengraph/">
+    {% else %}
+    <meta name="og:image" content="https://v1.screenshot.11ty.dev/{{ url }}/opengraph/">
+    {% endif %}
 
     <meta name="twitter:card" content="summary_large_image">
 
@@ -51,7 +54,7 @@
                 <li><a class="link" href="/">Leaderboard</a></li>
                 <li><a class="link" href="/prompts">Prompts</a></li>
                 <li><a class="link" href="/#about">About</a></li>
-                <li><a class="btn-sm" href="https://github.com/roboflow/vision-ai-checkup">Add a Prompt</a></li>
+                <li><a class="btn-sm" href="https://github.com/roboflow/vision-ai-checkup/issues/new?template=prompt.yml">Add a Prompt</a></li>
             </ul>
 
             <!-- Mobile Navigation Button -->
