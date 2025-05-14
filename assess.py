@@ -10,12 +10,9 @@ from collections import defaultdict
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import time
+from urllib.parse import quote_plus
 
-import cv2
-import numpy as np
-import supervision as sv
 from jinja2 import Environment, FileSystemLoader
-from supervision.detection.utils import box_iou_batch
 from tqdm import tqdm
 from itertools import combinations
 
@@ -499,6 +496,13 @@ def main():
                     by_category_results=result_assessments_by_model_by_category[model_name],
                     average_time=average_times_by_model[model_name],
                     title=f"{model_name} Results - Vision AI Checkup",
+                    description=f"Explore the results of {model_name} on various vision tasks, from object understanding to document question answering.",
+                    og_image="https://visioncheckup.com" + quote_plus(
+                        os.path.join(
+                            OUTPUT_DIR,
+                            f"{slugify(model_name)}",
+                        )
+                    ),
                 )
             )
 
@@ -554,6 +558,10 @@ def main():
             for category in assessment_categories
         },
         title="Prompts | Vision AI Checkup",
+        description="Explore prompts used to evaluate various vision models on different tasks.",
+        og_image="https://visioncheckup.com" + quote_plus(
+            os.path.join(OUTPUT_DIR, "prompts/index.html")
+        ),
     )
 
     with open(os.path.join(OUTPUT_DIR, "prompts/index.html"), "w") as file:
@@ -595,6 +603,14 @@ def main():
             failed_count=sum(1 for result in model_results if not result["correct"]),
             total_count=len(model_results),
             title=f"{assessment['assessment_name']} - Vision AI Checkup",
+            description=f"View the results of {assessment['assessment_name']} when run against various SOTA vision models."
+            og_image="https://visioncheckup.com" + quote_plus(
+                os.path.join(
+                    OUTPUT_DIR,
+                    "assessments",
+                    slugify(assessment["assessment_name"]),
+                )
+            ),
         )
         os.makedirs(
             os.path.join(OUTPUT_DIR, "assessments", slugify(assessment["assessment_name"])),
@@ -690,7 +706,10 @@ def main():
             by_category_results=by_category_results,
             assessments=assessments,
             title=f"{model1} vs {model2} - Vision AI Checkup",
-            description=f"See how {model1} and {model2} compare on defect detection, document understanding, VQA, and more."
+            description=f"See how {model1} and {model2} compare on defect detection, document understanding, VQA, and more.",
+            og_image="https://v1.screenshot.11ty.dev/" + quote_plus(
+                f"https://visioncheckup.com/compare/{slugify(model1)}-vs-{slugify(model2)}/"
+            ),
         )
 
         os.makedirs(os.path.join(OUTPUT_DIR, "compare"), exist_ok=True)
