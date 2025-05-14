@@ -497,12 +497,7 @@ def main():
                     average_time=average_times_by_model[model_name],
                     title=f"{model_name} Results - Vision AI Checkup",
                     description=f"Explore the results of {model_name} on various vision tasks, from object understanding to document question answering.",
-                    og_image="https://visioncheckup.com" + quote_plus(
-                        os.path.join(
-                            OUTPUT_DIR,
-                            f"{slugify(model_name)}",
-                        )
-                    ),
+                    og_image="https://v1.screenshot.11ty.dev/" + quote_plus("https://visioncheckup.com/" + slugify(model_name)),
                 )
             )
 
@@ -559,9 +554,7 @@ def main():
         },
         title="Prompts | Vision AI Checkup",
         description="Explore prompts used to evaluate various vision models on different tasks.",
-        og_image="https://visioncheckup.com" + quote_plus(
-            os.path.join(OUTPUT_DIR, "prompts/index.html")
-        ),
+        og_image="https://visioncheckup.com/prompts",
     )
 
     with open(os.path.join(OUTPUT_DIR, "prompts/index.html"), "w") as file:
@@ -604,13 +597,7 @@ def main():
             total_count=len(model_results),
             title=f"{assessment['assessment_name']} - Vision AI Checkup",
             description=f"View the results of {assessment['assessment_name']} when run against various SOTA vision models.",
-            og_image="https://visioncheckup.com" + quote_plus(
-                os.path.join(
-                    OUTPUT_DIR,
-                    "assessments",
-                    slugify(assessment["assessment_name"]),
-                )
-            ),
+            og_image="https://v1.screenshot.11ty.dev/" + quote_plus("https://visioncheckup.com/assessments/" + slugify(assessment["assessment_name"]))
         )
         os.makedirs(
             os.path.join(OUTPUT_DIR, "assessments", slugify(assessment["assessment_name"])),
