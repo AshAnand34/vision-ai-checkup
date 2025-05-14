@@ -689,7 +689,8 @@ def main():
             model2_results=assessments_by_model[model2],
             by_category_results=by_category_results,
             assessments=assessments,
-            title=f"Compare {model1} and {model2} - Vision AI Checkup",
+            title=f"{model1} vs {model2} - Vision AI Checkup",
+            description=f"See how {model1} and {model2} compare on defect detection, document understanding, VQA, and more."
         )
 
         os.makedirs(os.path.join(OUTPUT_DIR, "compare"), exist_ok=True)
