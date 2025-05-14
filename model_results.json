@@ -20304,49 +20304,49 @@
             "correct": 59,
             "percentage": 77.6,
             "logo": "https://openai.com/favicon.ico",
-            "average_time": "6.92s"
+            "average_time": "6.85s"
         },
         "ChatGPT-4o": {
             "total": 76,
             "correct": 59,
             "percentage": 77.6,
             "logo": "https://openai.com/favicon.ico",
-            "average_time": "6.45s"
+            "average_time": "6.47s"
         },
         "OpenAI O4 Mini": {
             "total": 76,
             "correct": 57,
             "percentage": 75.0,
             "logo": "https://openai.com/favicon.ico",
-            "average_time": "11.34s"
+            "average_time": "11.78s"
         },
         "GPT-4.1": {
             "total": 76,
             "correct": 56,
             "percentage": 73.7,
             "logo": "https://openai.com/favicon.ico",
-            "average_time": "7.26s"
+            "average_time": "7.13s"
         },
         "Gemini 2.5 Pro Preview": {
             "total": 76,
             "correct": 55,
             "percentage": 72.4,
             "logo": "https://www.google.com/favicon.ico",
-            "average_time": "11.63s"
+            "average_time": "12.46s"
         },
         "Llama 4 Scout 17B": {
             "total": 76,
             "correct": 53,
             "percentage": 69.7,
             "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-            "average_time": "3.11s"
+            "average_time": "3.06s"
         },
         "Gemma 3 27b": {
             "total": 76,
             "correct": 53,
             "percentage": 69.7,
             "logo": "https://www.google.com/favicon.ico",
-            "average_time": "2.92s"
+            "average_time": "2.86s"
         },
         "Gemini 2.0 Flash": {
             "total": 76,
@@ -20360,63 +20360,63 @@
             "correct": 53,
             "percentage": 69.7,
             "logo": "https://www.anthropic.com/favicon.ico",
-            "average_time": "4.35s"
+            "average_time": "4.42s"
         },
         "Claude 3.7 Sonnet": {
             "total": 76,
             "correct": 52,
             "percentage": 68.4,
             "logo": "https://www.anthropic.com/favicon.ico",
-            "average_time": "5.24s"
+            "average_time": "5.32s"
         },
         "Gemini 2.0 Flash Lite": {
             "total": 76,
             "correct": 51,
             "percentage": 67.1,
             "logo": "https://www.google.com/favicon.ico",
-            "average_time": "3.00s"
+            "average_time": "3.01s"
         },
         "OpenAI O1": {
             "total": 76,
             "correct": 49,
             "percentage": 64.5,
             "logo": "https://openai.com/favicon.ico",
-            "average_time": "26.54s"
+            "average_time": "28.09s"
         },
         "Gemini 2.5 Flash Preview": {
             "total": 75,
             "correct": 47,
             "percentage": 62.7,
             "logo": "https://www.google.com/favicon.ico",
-            "average_time": "17.85s"
+            "average_time": "19.35s"
         },
         "Cohere Aya Vision 32B": {
             "total": 76,
             "correct": 45,
             "percentage": 59.2,
             "logo": "https://cohere.com/favicon.ico",
-            "average_time": "4.15s"
+            "average_time": "4.28s"
         },
         "Qwen 2.5 VL 7B": {
             "total": 76,
             "correct": 45,
             "percentage": 59.2,
             "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-            "average_time": "3.86s"
+            "average_time": "3.90s"
         },
         "Llama 3 11B Vision": {
             "total": 76,
             "correct": 42,
             "percentage": 55.3,
             "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-            "average_time": "5.15s"
+            "average_time": "5.09s"
         },
         "GPT-4.1 Nano": {
             "total": 76,
             "correct": 37,
             "percentage": 48.7,
             "logo": "https://openai.com/favicon.ico",
-            "average_time": "6.34s"
+            "average_time": "6.18s"
         },
         "Cohere Aya Vision 8B": {
             "total": 76,
@@ -20430,7 +20430,7 @@
             "correct": 31,
             "percentage": 40.8,
             "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-            "average_time": "3.64s"
+            "average_time": "3.69s"
         }
     },
     "assessments": [
@@ -21399,49 +21399,49 @@
                     "correct": 59,
                     "percentage": 77.6,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "ChatGPT-4o": {
                     "total": 76,
                     "correct": 59,
                     "percentage": 77.6,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 76,
                     "correct": 57,
                     "percentage": 75.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "GPT-4.1": {
                     "total": 76,
                     "correct": 56,
                     "percentage": 73.7,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 76,
                     "correct": 55,
                     "percentage": 72.4,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "Llama 4 Scout 17B": {
                     "total": 76,
                     "correct": 53,
                     "percentage": 69.7,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "Gemma 3 27b": {
                     "total": 76,
                     "correct": 53,
                     "percentage": 69.7,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 76,
@@ -21455,63 +21455,63 @@
                     "correct": 53,
                     "percentage": 69.7,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 76,
                     "correct": 52,
                     "percentage": 68.4,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 76,
                     "correct": 51,
                     "percentage": 67.1,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "OpenAI O1": {
                     "total": 76,
                     "correct": 49,
                     "percentage": 64.5,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 },
                 "Gemini 2.5 Flash Preview": {
                     "total": 75,
                     "correct": 47,
                     "percentage": 62.7,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "Cohere Aya Vision 32B": {
                     "total": 76,
                     "correct": 45,
                     "percentage": 59.2,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Qwen 2.5 VL 7B": {
                     "total": 76,
                     "correct": 45,
                     "percentage": 59.2,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "Llama 3 11B Vision": {
                     "total": 76,
                     "correct": 42,
                     "percentage": 55.3,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "GPT-4.1 Nano": {
                     "total": 76,
                     "correct": 37,
                     "percentage": 48.7,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 76,
@@ -21525,7 +21525,7 @@
                     "correct": 31,
                     "percentage": 40.8,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 }
             },
             "Annotation Understanding": {
@@ -21534,14 +21534,14 @@
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 2,
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 2,
@@ -21555,70 +21555,70 @@
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 },
                 "GPT-4.1 Mini": {
                     "total": 2,
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "Gemini 2.5 Flash Preview": {
                     "total": 2,
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "ChatGPT-4o": {
                     "total": 2,
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "GPT-4.1": {
                     "total": 2,
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Claude 3.5 Haiku": {
                     "total": 2,
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 2,
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 2,
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "OpenAI O1": {
                     "total": 2,
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 },
                 "Llama 3 11B Vision": {
                     "total": 2,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 2,
@@ -21632,35 +21632,35 @@
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Llama 4 Scout 17B": {
                     "total": 2,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "Qwen 2.5 VL 7B": {
                     "total": 2,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "GPT-4.1 Nano": {
                     "total": 2,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 2,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 }
             },
             "CAPTCHA": {
@@ -21669,14 +21669,14 @@
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "Gemma 3 27b": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 1,
@@ -21690,56 +21690,56 @@
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "GPT-4.1 Mini": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "Gemini 2.5 Flash Preview": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "ChatGPT-4o": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "Llama 3 11B Vision": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 1,
@@ -21753,49 +21753,49 @@
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "Mistral Small 3.1 24b": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 },
                 "GPT-4.1 Nano": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 },
                 "GPT-4.1": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Claude 3.5 Haiku": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "OpenAI O1": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 }
             },
             "Color Identification": {
@@ -21804,7 +21804,7 @@
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 1,
@@ -21818,28 +21818,28 @@
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Llama 4 Scout 17B": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "Gemma 3 27b": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 1,
@@ -21853,84 +21853,84 @@
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "GPT-4.1 Nano": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 },
                 "GPT-4.1 Mini": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "ChatGPT-4o": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "GPT-4.1": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Claude 3.5 Haiku": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "Mistral Small 3.1 24b": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 },
                 "Gemini 2.5 Flash Preview": {
                     "total": 0,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 0,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "OpenAI O1": {
                     "total": 0,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 }
             },
             "Defect Detection": {
@@ -21939,28 +21939,28 @@
                     "correct": 11,
                     "percentage": 78.6,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "GPT-4.1 Mini": {
                     "total": 14,
                     "correct": 10,
                     "percentage": 71.4,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "Llama 4 Scout 17B": {
                     "total": 14,
                     "correct": 9,
                     "percentage": 64.3,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "Gemma 3 27b": {
                     "total": 14,
                     "correct": 9,
                     "percentage": 64.3,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 14,
@@ -21974,28 +21974,28 @@
                     "correct": 9,
                     "percentage": 64.3,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Claude 3.5 Haiku": {
                     "total": 14,
                     "correct": 9,
                     "percentage": 64.3,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 14,
                     "correct": 9,
                     "percentage": 64.3,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "OpenAI O1": {
                     "total": 14,
                     "correct": 9,
                     "percentage": 64.3,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 14,
@@ -22009,63 +22009,63 @@
                     "correct": 8,
                     "percentage": 57.1,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 14,
                     "correct": 8,
                     "percentage": 57.1,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "Qwen 2.5 VL 7B": {
                     "total": 14,
                     "correct": 8,
                     "percentage": 57.1,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 14,
                     "correct": 8,
                     "percentage": 57.1,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "Mistral Small 3.1 24b": {
                     "total": 14,
                     "correct": 7,
                     "percentage": 50.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 },
                 "Gemini 2.5 Flash Preview": {
                     "total": 14,
                     "correct": 7,
                     "percentage": 50.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 14,
                     "correct": 7,
                     "percentage": 50.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "Llama 3 11B Vision": {
                     "total": 14,
                     "correct": 5,
                     "percentage": 35.7,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "GPT-4.1 Nano": {
                     "total": 14,
                     "correct": 4,
                     "percentage": 28.6,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 }
             },
             "Document Understanding": {
@@ -22074,14 +22074,14 @@
                     "correct": 5,
                     "percentage": 83.3,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "Gemma 3 27b": {
                     "total": 6,
                     "correct": 5,
                     "percentage": 83.3,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 6,
@@ -22095,91 +22095,91 @@
                     "correct": 5,
                     "percentage": 83.3,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "Claude 3.5 Haiku": {
                     "total": 6,
                     "correct": 5,
                     "percentage": 83.3,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 6,
                     "correct": 5,
                     "percentage": 83.3,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 6,
                     "correct": 5,
                     "percentage": 83.3,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 6,
                     "correct": 5,
                     "percentage": 83.3,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "OpenAI O1": {
                     "total": 6,
                     "correct": 5,
                     "percentage": 83.3,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 6,
                     "correct": 4,
                     "percentage": 66.7,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "Mistral Small 3.1 24b": {
                     "total": 6,
                     "correct": 4,
                     "percentage": 66.7,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 },
                 "Qwen 2.5 VL 7B": {
                     "total": 6,
                     "correct": 4,
                     "percentage": 66.7,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "GPT-4.1 Mini": {
                     "total": 6,
                     "correct": 4,
                     "percentage": 66.7,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "ChatGPT-4o": {
                     "total": 6,
                     "correct": 4,
                     "percentage": 66.7,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "GPT-4.1": {
                     "total": 6,
                     "correct": 4,
                     "percentage": 66.7,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Llama 3 11B Vision": {
                     "total": 6,
                     "correct": 3,
                     "percentage": 50.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 6,
@@ -22193,14 +22193,14 @@
                     "correct": 3,
                     "percentage": 50.0,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "GPT-4.1 Nano": {
                     "total": 6,
                     "correct": 2,
                     "percentage": 33.3,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 }
             },
             "Localization": {
@@ -22209,28 +22209,28 @@
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Llama 4 Scout 17B": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "Gemma 3 27b": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 1,
@@ -22244,63 +22244,63 @@
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "GPT-4.1 Mini": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "ChatGPT-4o": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "GPT-4.1": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "OpenAI O1": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 },
                 "Llama 3 11B Vision": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 1,
@@ -22314,28 +22314,28 @@
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 },
                 "GPT-4.1 Nano": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 },
                 "Gemini 2.5 Flash Preview": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "Claude 3.5 Haiku": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 }
             },
             "OCR": {
@@ -22344,49 +22344,49 @@
                     "correct": 9,
                     "percentage": 100.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "GPT-4.1 Mini": {
                     "total": 9,
                     "correct": 9,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "ChatGPT-4o": {
                     "total": 9,
                     "correct": 9,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "GPT-4.1": {
                     "total": 9,
                     "correct": 9,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 9,
                     "correct": 9,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "OpenAI O1": {
                     "total": 9,
                     "correct": 9,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 9,
                     "correct": 8,
                     "percentage": 88.9,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 9,
@@ -22400,70 +22400,70 @@
                     "correct": 8,
                     "percentage": 88.9,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 9,
                     "correct": 8,
                     "percentage": 88.9,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 9,
                     "correct": 8,
                     "percentage": 88.9,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "Llama 3 11B Vision": {
                     "total": 9,
                     "correct": 7,
                     "percentage": 77.8,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "Gemma 3 27b": {
                     "total": 9,
                     "correct": 7,
                     "percentage": 77.8,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Qwen 2.5 VL 7B": {
                     "total": 9,
                     "correct": 6,
                     "percentage": 66.7,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "GPT-4.1 Nano": {
                     "total": 9,
                     "correct": 6,
                     "percentage": 66.7,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 },
                 "Claude 3.5 Haiku": {
                     "total": 9,
                     "correct": 6,
                     "percentage": 66.7,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "Cohere Aya Vision 32B": {
                     "total": 9,
                     "correct": 5,
                     "percentage": 55.6,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Mistral Small 3.1 24b": {
                     "total": 9,
                     "correct": 4,
                     "percentage": 44.4,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 9,
@@ -22479,56 +22479,56 @@
                     "correct": 4,
                     "percentage": 50.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "Llama 3 11B Vision": {
                     "total": 8,
                     "correct": 2,
                     "percentage": 25.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "Llama 4 Scout 17B": {
                     "total": 8,
                     "correct": 2,
                     "percentage": 25.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 8,
                     "correct": 2,
                     "percentage": 25.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "GPT-4.1 Mini": {
                     "total": 8,
                     "correct": 2,
                     "percentage": 25.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 8,
                     "correct": 2,
                     "percentage": 25.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 8,
                     "correct": 2,
                     "percentage": 25.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "OpenAI O1": {
                     "total": 9,
                     "correct": 2,
                     "percentage": 22.2,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 8,
@@ -22542,14 +22542,14 @@
                     "correct": 1,
                     "percentage": 12.5,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Gemma 3 27b": {
                     "total": 8,
                     "correct": 1,
                     "percentage": 12.5,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 8,
@@ -22563,49 +22563,49 @@
                     "correct": 1,
                     "percentage": 12.5,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 },
                 "ChatGPT-4o": {
                     "total": 8,
                     "correct": 1,
                     "percentage": 12.5,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "GPT-4.1": {
                     "total": 8,
                     "correct": 1,
                     "percentage": 12.5,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 8,
                     "correct": 1,
                     "percentage": 12.5,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "Mistral Small 3.1 24b": {
                     "total": 8,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 },
                 "Qwen 2.5 VL 7B": {
                     "total": 8,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "Gemini 2.5 Flash Preview": {
                     "total": 7,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 }
             },
             "Object Detection": {
@@ -22614,105 +22614,105 @@
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Llama 4 Scout 17B": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "Gemma 3 27b": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Qwen 2.5 VL 7B": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "GPT-4.1 Mini": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "Gemini 2.5 Flash Preview": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "ChatGPT-4o": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "GPT-4.1": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Claude 3.5 Haiku": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "OpenAI O1": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 },
                 "Llama 3 11B Vision": {
                     "total": 2,
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 2,
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 2,
@@ -22726,7 +22726,7 @@
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 2,
@@ -22740,7 +22740,7 @@
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 }
             },
             "Object Measurement": {
@@ -22749,14 +22749,14 @@
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "Gemma 3 27b": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 1,
@@ -22770,21 +22770,21 @@
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Llama 4 Scout 17B": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 1,
@@ -22798,84 +22798,84 @@
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 },
                 "Qwen 2.5 VL 7B": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "GPT-4.1 Nano": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 },
                 "GPT-4.1 Mini": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "Gemini 2.5 Flash Preview": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "ChatGPT-4o": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "GPT-4.1": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Claude 3.5 Haiku": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "OpenAI O1": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 }
             },
             "Object Understanding": {
@@ -22884,49 +22884,49 @@
                     "correct": 9,
                     "percentage": 90.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "Cohere Aya Vision 32B": {
                     "total": 9,
                     "correct": 8,
                     "percentage": 88.9,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Gemma 3 27b": {
                     "total": 9,
                     "correct": 8,
                     "percentage": 88.9,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "GPT-4.1 Mini": {
                     "total": 9,
                     "correct": 8,
                     "percentage": 88.9,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "ChatGPT-4o": {
                     "total": 9,
                     "correct": 8,
                     "percentage": 88.9,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "GPT-4.1": {
                     "total": 9,
                     "correct": 8,
                     "percentage": 88.9,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 9,
                     "correct": 7,
                     "percentage": 77.8,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 9,
@@ -22940,63 +22940,63 @@
                     "correct": 7,
                     "percentage": 77.8,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 9,
                     "correct": 7,
                     "percentage": 77.8,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "Gemini 2.5 Flash Preview": {
                     "total": 10,
                     "correct": 7,
                     "percentage": 70.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "Llama 3 11B Vision": {
                     "total": 9,
                     "correct": 6,
                     "percentage": 66.7,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "Llama 4 Scout 17B": {
                     "total": 9,
                     "correct": 6,
                     "percentage": 66.7,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "Qwen 2.5 VL 7B": {
                     "total": 9,
                     "correct": 6,
                     "percentage": 66.7,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "GPT-4.1 Nano": {
                     "total": 9,
                     "correct": 6,
                     "percentage": 66.7,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 9,
                     "correct": 6,
                     "percentage": 66.7,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "Mistral Small 3.1 24b": {
                     "total": 9,
                     "correct": 5,
                     "percentage": 55.6,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 9,
@@ -23010,7 +23010,7 @@
                     "correct": 4,
                     "percentage": 40.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 }
             },
             "Receipt Reading": {
@@ -23019,21 +23019,21 @@
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "Gemma 3 27b": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 1,
@@ -23047,77 +23047,77 @@
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 },
                 "Qwen 2.5 VL 7B": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "GPT-4.1 Nano": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 },
                 "GPT-4.1 Mini": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "Gemini 2.5 Flash Preview": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "ChatGPT-4o": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "GPT-4.1": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Claude 3.5 Haiku": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 1,
                     "correct": 1,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 1,
@@ -23131,21 +23131,21 @@
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Llama 4 Scout 17B": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "OpenAI O1": {
                     "total": 1,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 }
             },
             "Sign Understanding": {
@@ -23161,28 +23161,28 @@
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Llama 4 Scout 17B": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "Gemma 3 27b": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 2,
@@ -23196,91 +23196,91 @@
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "GPT-4.1 Mini": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "Gemini 2.5 Flash Preview": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "ChatGPT-4o": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "GPT-4.1": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Claude 3.5 Haiku": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "OpenAI O1": {
                     "total": 2,
                     "correct": 2,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 },
                 "Llama 3 11B Vision": {
                     "total": 2,
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "GPT-4.1 Nano": {
                     "total": 2,
                     "correct": 1,
                     "percentage": 50.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 },
                 "Mistral Small 3.1 24b": {
                     "total": 2,
                     "correct": 0,
                     "percentage": 0.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 }
             },
             "Spatial Relations": {
@@ -23289,49 +23289,49 @@
                     "correct": 13,
                     "percentage": 86.7,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "ChatGPT-4o": {
                     "total": 15,
                     "correct": 13,
                     "percentage": 86.7,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "GPT-4.1": {
                     "total": 15,
                     "correct": 13,
                     "percentage": 86.7,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 15,
                     "correct": 13,
                     "percentage": 86.7,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 15,
                     "correct": 12,
                     "percentage": 80.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "Llama 4 Scout 17B": {
                     "total": 15,
                     "correct": 11,
                     "percentage": 73.3,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 15,
                     "correct": 11,
                     "percentage": 73.3,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 15,
@@ -23345,63 +23345,63 @@
                     "correct": 11,
                     "percentage": 73.3,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 },
                 "Claude 3.5 Haiku": {
                     "total": 15,
                     "correct": 11,
                     "percentage": 73.3,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 15,
                     "correct": 11,
                     "percentage": 73.3,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "OpenAI O1": {
                     "total": 14,
                     "correct": 10,
                     "percentage": 71.4,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 },
                 "Llama 3 11B Vision": {
                     "total": 15,
                     "correct": 10,
                     "percentage": 66.7,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "Cohere Aya Vision 32B": {
                     "total": 15,
                     "correct": 10,
                     "percentage": 66.7,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Gemma 3 27b": {
                     "total": 15,
                     "correct": 9,
                     "percentage": 60.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Qwen 2.5 VL 7B": {
                     "total": 15,
                     "correct": 9,
                     "percentage": 60.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "Gemini 2.5 Flash Preview": {
                     "total": 15,
                     "correct": 9,
                     "percentage": 60.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 15,
@@ -23415,7 +23415,7 @@
                     "correct": 6,
                     "percentage": 40.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 }
             },
             "Web Action Understanding": {
@@ -23424,7 +23424,7 @@
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "5.15s"
+                    "average_time": "5.09s"
                 },
                 "Cohere Aya Vision 8B": {
                     "total": 4,
@@ -23438,28 +23438,28 @@
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://cohere.com/favicon.ico",
-                    "average_time": "4.15s"
+                    "average_time": "4.28s"
                 },
                 "Llama 4 Scout 17B": {
                     "total": 4,
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://signsalad.com/wp-content/uploads/2021/11/Screenshot-2021-11-03-at-12.14.11.png",
-                    "average_time": "3.11s"
+                    "average_time": "3.06s"
                 },
                 "Gemma 3 27b": {
                     "total": 4,
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "2.92s"
+                    "average_time": "2.86s"
                 },
                 "Gemini 2.0 Flash Lite": {
                     "total": 4,
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "3.00s"
+                    "average_time": "3.01s"
                 },
                 "Gemini 2.0 Flash": {
                     "total": 4,
@@ -23473,84 +23473,84 @@
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png",
-                    "average_time": "3.86s"
+                    "average_time": "3.90s"
                 },
                 "GPT-4.1 Mini": {
                     "total": 4,
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.92s"
+                    "average_time": "6.85s"
                 },
                 "Gemini 2.5 Flash Preview": {
                     "total": 4,
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "17.85s"
+                    "average_time": "19.35s"
                 },
                 "ChatGPT-4o": {
                     "total": 4,
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.45s"
+                    "average_time": "6.47s"
                 },
                 "GPT-4.1": {
                     "total": 4,
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "7.26s"
+                    "average_time": "7.13s"
                 },
                 "Claude 3.5 Haiku": {
                     "total": 4,
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "4.35s"
+                    "average_time": "4.42s"
                 },
                 "Gemini 2.5 Pro Preview": {
                     "total": 4,
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://www.google.com/favicon.ico",
-                    "average_time": "11.63s"
+                    "average_time": "12.46s"
                 },
                 "Claude 3.7 Sonnet": {
                     "total": 4,
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://www.anthropic.com/favicon.ico",
-                    "average_time": "5.24s"
+                    "average_time": "5.32s"
                 },
                 "OpenAI O4 Mini": {
                     "total": 4,
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "11.34s"
+                    "average_time": "11.78s"
                 },
                 "OpenAI O1": {
                     "total": 4,
                     "correct": 4,
                     "percentage": 100.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "26.54s"
+                    "average_time": "28.09s"
                 },
                 "Mistral Small 3.1 24b": {
                     "total": 4,
                     "correct": 3,
                     "percentage": 75.0,
                     "logo": "https://cdn-avatars.huggingface.co/v1/production/uploads/62dac1c7a8ead43d20e3e17a/wrLf5yaGC6ng4XME70w6Z.png",
-                    "average_time": "3.64s"
+                    "average_time": "3.69s"
                 },
                 "GPT-4.1 Nano": {
                     "total": 4,
                     "correct": 3,
                     "percentage": 75.0,
                     "logo": "https://openai.com/favicon.ico",
-                    "average_time": "6.34s"
+                    "average_time": "6.18s"
                 }
             }
         },

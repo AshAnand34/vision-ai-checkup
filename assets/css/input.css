@@ -6,6 +6,15 @@
   @apply outline-2 outline-offset-2 outline-violet-700/10;
 }
 
+.bg-pattern {
+  background-image: url("../images/bg.png");
+  /* background-size: 100% 100%; */
+  background-repeat: repeat;
+  inset: 0 0 0 0;
+  z-index: 0;
+  background-attachment: fixed;
+}
+
 .link {
   @apply text-violet-700 transition-colors;
 }
@@ -102,6 +111,7 @@
   overflow: hidden;
   inset: 0 0 0 0;
   z-index: 0;
+  background-attachment: fixed;
 }
 
 .bkg-img-adjustable-glasses {
@@ -144,4 +154,43 @@
   max-width: 10rem;
   height: auto;
   opacity: 0.5;
+}
+
+.bkg-img-eyechart-rf {
+  position: absolute;
+  top: 100px;
+  left: -5.5rem;
+  width: 100%;
+  max-width: 19rem;
+}
+.bkg-img-glasses {
+  position: absolute;
+  bottom: 100px;
+  right: -4rem;
+  width: 100%;
+  max-width: 290px;
+  height: auto;
+  opacity: 1;
+}
+
+.bkg-img-clipboard-rx {
+  position: absolute;
+  bottom: -265px;
+  left: -4rem;
+  width: 100%;
+  max-width: 310px;
+  height: auto;
+  transform: rotate(14deg);
+  opacity: 1;
+}
+
+.bkg-img-contact-lense-case {
+  position: absolute;
+  top: 240px;
+  right: -2rem;
+  width: 100%;
+  max-width: 179px;
+  height: auto;
+  transform: rotate(-20deg);
+  opacity: 1;
 }

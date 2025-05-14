@@ -16,7 +16,6 @@
     <meta name="description" content="See how LLMs, foundation models, and VLMs do on vision tasks.">
     <meta name="og:description" content="See how LLMs, foundation models, and VLMs do on vision tasks.">
     {% endif %}
-    
     {% if og_image %}
     <meta name="og:image" content="{{ og_image }}/opengraph/">
     {% else %}
@@ -40,12 +39,13 @@
     gtag('config', 'G-6FV0VVEGDG');
     </script>
 </head>
-<body class="min-h-screen flex flex-col bg-zinc-100">
+<body class="min-h-screen flex flex-col bg-zinc-100 bg-pattern">
 
-    <header class="flex justify-between items-center h-16 px-4 py-2 bg-zinc-50/60 backdrop-blur-sm sticky top-0 z-50">
+    <header class="flex justify-between items-center h-16 px-4 py-2 bg-white backdrop-blur-sm sticky top-0 z-50">
         <nav class="w-full flex justify-between items-center gap-4">
             <a class="flex items-center gap-2" href="/">
-                <img src="/images/svg/logo-vision-ai-checkup.svg" alt="Vision AI Checkup" class="w-6 h-6" />
+                <img src="/images/svg/logo-glasses.svg" alt="Vision AI Checkup" class="w-8" />
+                <!-- <img src="/images/svg/logo-vision-ai-checkup.svg" alt="Vision AI Checkup" class="w-6 h-6" /> -->
                 <p>Vision AI Checkup</p>
             </a>
 
@@ -75,7 +75,8 @@
         <div class="flex flex-col h-full">
             <div class="flex justify-between items-center h-16 min-h-16 px-4 py-2 bg-zinc-50/10">
                 <a class="flex items-center gap-2" href="/">
-                    <img src="/images/svg/logo-vision-ai-checkup.svg" alt="Vision AI Checkup" class="w-6 h-6" />
+                    <img src="/images/svg/logo-glasses.svg" alt="Vision AI Checkup" class="w-6" />
+                    <!-- <img src="/images/svg/logo-vision-ai-checkup.svg" alt="Vision AI Checkup" class="w-6 h-6" /> -->
                     <p>Vision AI Checkup</p>
                 </a>
                 <button
@@ -100,10 +101,14 @@
     </div>
 
     <div class="bkg-img">
-        <img src="/images/svg/adjustable-glasses.svg" alt="adjustable glasses illustration" class="bkg-img-adjustable-glasses">
-        <img src="/images/svg/eye-chart.svg" alt="eye chart illustration" class="bkg-img-eye-chart">
-        <img src="/images/svg/clipboard.svg" alt="clipboard illustration" class="bkg-img-clipboard">
-        <img src="/images/svg/lenses.svg" alt="lenses illustration" class="bkg-img-lenses">
+        <img src="/images/img-eyechart-rf.png" alt="eye chart" class="bkg-img-eyechart-rf">
+        <img src="/images/img-glasses.png" alt="glasses" class="bkg-img-glasses">
+        <img src="/images/img-clipboard.png" alt="clipboard" class="bkg-img-clipboard-rx">
+        <img src="/images/img-contact-lense-case.png" alt="contact lense case" class="bkg-img-contact-lense-case">
+        <!-- <img src="/images/svg/adjustable-glasses.svg" alt="adjustable glasses illustration" class="bkg-img-adjustable-glasses"> -->
+        <!-- <img src="/images/svg/eye-chart.svg" alt="eye chart illustration" class="bkg-img-eye-chart"> -->
+        <!-- <img src="/images/svg/clipboard.svg" alt="clipboard illustration" class="bkg-img-clipboard"> -->
+        <!-- <img src="/images/svg/lenses.svg" alt="lenses illustration" class="bkg-img-lenses"> -->
     </div>
 
     <main class="flex flex-col flex-grow gap-10 py-12 relative z-10" {% if full_width %}class="w-full"{% endif %} {% if grid %}class="max-w-[75rem] mx-auto flex gap-6 relative z-10"{% endif %}>
@@ -124,7 +129,7 @@
             // Only play animation if not already played in this session
             if (!sessionStorage.getItem('bkgAnimationPlayed')) {
                 const duration = 1;
-                gsap.fromTo(".bkg-img-adjustable-glasses", {
+                gsap.fromTo(".bkg-img-eyechart-rf", {
                     x: '-30rem',
                     y: '-30rem',
                     opacity: 0,
@@ -133,24 +138,24 @@
                 }, {
                     x: '0rem',
                     y: '0rem',
-                    opacity: 0.5,
+                    opacity: 1,
                     filter: 'blur(0px)',
                     duration: duration,
                 });
-                gsap.fromTo(".bkg-img-eye-chart", {
-                    x: '12rem',
-                    y: '-12rem',
+                gsap.fromTo(".bkg-img-glasses", {
+                    x: '10rem',
+                    y: '10rem',
                     opacity: 0,
                     filter: 'blur(20px)',
                     ease: "power2.inOut"
                 }, {
                     x: '0rem',
                     y: '0rem',
-                    opacity: 0.5,
+                    opacity: 1,
                     filter: 'blur(0px)',
                     duration: duration,
                 });
-                gsap.fromTo(".bkg-img-clipboard", {
+                gsap.fromTo(".bkg-img-clipboard-rx", {
                     x: '-30rem',
                     y: '30rem',
                     duration: 1,
@@ -160,23 +165,76 @@
                 }, {
                     x: '0rem',
                     y: '0rem',
-                    opacity: 0.3,
+                    opacity: 1,
                     filter: 'blur(0px)',
                     duration: duration,
                 });
-                gsap.fromTo(".bkg-img-lenses", {
-                    x: '10rem',
-                    y: '10rem',
+                gsap.fromTo(".bkg-img-contact-lense-case", {
+                    x: '12rem',
+                    y: '-12rem',
                     opacity: 0,
                     filter: 'blur(20px)',
                     ease: "power2.inOut"
                 }, {
                     x: '0rem',
                     y: '0rem',
-                    opacity: 0.5,
+                    opacity: 1,
                     filter: 'blur(0px)',
                     duration: duration,
                 });
+                // gsap.fromTo(".bkg-img-adjustable-glasses", {
+                //     x: '-30rem',
+                //     y: '-30rem',
+                //     opacity: 0,
+                //     filter: 'blur(20px)',
+                //     ease: "power2.inOut"
+                // }, {
+                //     x: '0rem',
+                //     y: '0rem',
+                //     opacity: 0.5,
+                //     filter: 'blur(0px)',
+                //     duration: duration,
+                // });
+                // gsap.fromTo(".bkg-img-eye-chart", {
+                //     x: '12rem',
+                //     y: '-12rem',
+                //     opacity: 0,
+                //     filter: 'blur(20px)',
+                //     ease: "power2.inOut"
+                // }, {
+                //     x: '0rem',
+                //     y: '0rem',
+                //     opacity: 0.5,
+                //     filter: 'blur(0px)',
+                //     duration: duration,
+                // });
+                // gsap.fromTo(".bkg-img-clipboard", {
+                //     x: '-30rem',
+                //     y: '30rem',
+                //     duration: 1,
+                //     opacity: 0,
+                //     filter: 'blur(20px)',
+                //     ease: "power2.inOut"
+                // }, {
+                //     x: '0rem',
+                //     y: '0rem',
+                //     opacity: 0.3,
+                //     filter: 'blur(0px)',
+                //     duration: duration,
+                // });
+                // gsap.fromTo(".bkg-img-lenses", {
+                //     x: '10rem',
+                //     y: '10rem',
+                //     opacity: 0,
+                //     filter: 'blur(20px)',
+                //     ease: "power2.inOut"
+                // }, {
+                //     x: '0rem',
+                //     y: '0rem',
+                //     opacity: 0.5,
+                //     filter: 'blur(0px)',
+                //     duration: duration,
+                // });
 
                 // Mark animation as played for this session
                 sessionStorage.setItem('bkgAnimationPlayed', 'true');
