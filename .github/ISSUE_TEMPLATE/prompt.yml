@@ -36,3 +36,9 @@ body:
         Specify the expected correct answer here.
     validations:
       required: true
+
+  - type: input
+    attributes:
+      label: How would you like to be cited? (optional)
+      description: You can optionally share your name, website link, or GitHub link for us to list you as the author of this prompt on the website.
+      placeholder: Lenny (https://example.com)
