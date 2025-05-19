@@ -435,18 +435,18 @@ def main():
             description=f"Explore the best models for {category} tasks.",
         )
 
-        with open(os.path.join(OUTPUT_DIR, f"{slugify(category)}.html"), "w") as file:
+        with open(os.path.join(OUTPUT_DIR, f"{slugify(category)}.html"), "w", encoding="utf-8") as file:
             file.write(category_output)
 
 
-    with open(os.path.join(OUTPUT_DIR, "index.html"), "w") as file:
+    with open(os.path.join(OUTPUT_DIR, "index.html"), "w", encoding="utf-8") as file:
         file.write(output)
 
     for model_name, results in assessments_by_model.items():
         os.makedirs(os.path.join(OUTPUT_DIR, slugify(model_name)), exist_ok=True)
 
         with open(
-            os.path.join(OUTPUT_DIR, f"{slugify(model_name)}/index.html"), "w"
+            os.path.join(OUTPUT_DIR, f"{slugify(model_name)}/index.html"), "w", encoding="utf-8"
         ) as file:
             results = sorted(
                 results.values(),
@@ -526,7 +526,7 @@ def main():
         
     saved_results = delete_bytes(saved_results)
 
-    with open("model_results.json", "w") as file:
+    with open("model_results.json", "w", encoding="utf-8") as file:
         file.write(json.dumps(saved_results, indent=4))
 
     for assessment in assessments:
@@ -557,7 +557,7 @@ def main():
         og_image="https://visioncheckup.com/prompts",
     )
 
-    with open(os.path.join(OUTPUT_DIR, "prompts/index.html"), "w") as file:
+    with open(os.path.join(OUTPUT_DIR, "prompts/index.html"), "w", encoding="utf-8") as file:
         file.write(prompts_output)
 
     # create pages for each assessment
@@ -609,6 +609,7 @@ def main():
                 OUTPUT_DIR, "assessments", f"{slugify(assessment['assessment_name'])}/index.html"
             ),
             "w",
+            encoding="utf-8"
         ) as file:
             file.write(assessment_output)
 
@@ -642,7 +643,7 @@ def main():
                     * 100,
                     1,
                 ),
-                "avg_time": f"{sum(float(result["time_taken"].replace("s", "")) for result in model1_results) / (len(model1_results) or 1):.2f}s"
+                "avg_time": f"{sum(float(result['time_taken'].replace('s', '')) for result in model1_results) / (len(model1_results) or 1):.2f}s"
             }
 
             by_category_results[category]["model2"] = {
@@ -657,7 +658,7 @@ def main():
                     * 100,
                     1,
                 ),
-                "avg_time": f"{sum(float(result["time_taken"].replace("s", "")) for result in model2_results) / (len(model2_results) or 1):.2f}s",
+                "avg_time": f"{sum(float(result['time_taken'].replace('s', '')) for result in model2_results) / (len(model2_results) or 1):.2f}s",
             }
 
         # create a compare page for each model combination
@@ -701,7 +702,7 @@ def main():
 
         os.makedirs(os.path.join(OUTPUT_DIR, "compare"), exist_ok=True)
         os.makedirs(os.path.join(OUTPUT_DIR, "compare", f"{slugify(model1)}-vs-{slugify(model2)}"), exist_ok=True)
-        with open(os.path.join(OUTPUT_DIR, "compare", f"{slugify(model1)}-vs-{slugify(model2)}/index.html"), "w") as file:
+        with open(os.path.join(OUTPUT_DIR, "compare", f"{slugify(model1)}-vs-{slugify(model2)}/index.html"), "w", encoding="utf-8") as file:
             file.write(compare_output)
 
     urls = []
@@ -726,7 +727,7 @@ def main():
         urls=urls,
         build_date=time.strftime("%Y-%m-%dT%H:%M:%S+00:00", time.gmtime()),
     )
-    with open(os.path.join(OUTPUT_DIR, "sitemap.xml"), "w") as file:
+    with open(os.path.join(OUTPUT_DIR, "sitemap.xml"), "w", encoding="utf-8") as file:
         file.write(sitemap_output)
 
     assets_dir = "assets/"
