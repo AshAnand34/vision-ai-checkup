@@ -93,8 +93,9 @@ def main():
     with open("prompts.csv", "r") as file:
         reader = csv.DictReader(file)
         assessments = list(reader)
-        for assessment in assessments:
+        for idx, assessment in enumerate(assessments):
             assessment["slug"] = slugify(assessment["assessment_name"])
+            assessment["test_id"] = str(idx)  # Add test_id based on row index
 
     assessments_by_model = defaultdict(lambda: defaultdict(list))
 
@@ -106,7 +107,7 @@ def main():
             assessment["image"] = image_file.read()
         start_time = time.time()
         print(
-            f"Running {model_name} with image {assessment['file_name']} and prompt {assessment['prompt']}"
+            f"Running {model_name} with test ID {assessment['test_id']} (image {assessment['file_name']}) and prompt {assessment['prompt']}"
         )
 
         result = model.run_with_retry(
@@ -116,7 +117,7 @@ def main():
         )
         # if result is none, try on compressed
         if result is None:
-            print(f"Retrying {model_name} with compressed image")
+            print(f"Retrying {model_name} with compressed image for test ID {assessment['test_id']}")
             with open(
                 os.path.join(BASE_IMAGE_DIR, "compressed/", assessment["file_name"].replace(".png", ".jpeg")), "rb"
             ) as image_file:
@@ -249,7 +250,7 @@ def main():
                     len(normalise_output(result)) > 1
                     and normalise_output(answer) in normalise_output(result)
                 )
-                assessments_by_model[model_name][assessment["file_name"]] = payload
+                assessments_by_model[model_name][assessment["test_id"]] = payload
         model_results = {}
 
     for model_name, results in assessments_by_model.items():
@@ -287,7 +288,7 @@ def main():
 
     for model_name, results in assessments_by_model.items():
         for assessment in assessments:
-            assessment_item = results.get(assessment["file_name"], {})
+            assessment_item = results.get(assessment["test_id"], {})
             if not assessment_item:
                 continue
             assessments_by_model_by_category[model_name][assessment["category"]].append(
@@ -564,11 +565,8 @@ def main():
     for assessment in assessments:
         model_results = []
         for model_name, results in assessments_by_model.items():
-            if assessment["file_name"] in results:
-                result = results[assessment["file_name"]]
-                # print(
-                #     f"Creating page for {assessment['file_name']} with {model_name} - {result['correct']}"
-                # )
+            if assessment["test_id"] in results:
+                result = results[assessment["test_id"]]
                 model_results.append(
                     {
                         "model_name": model_name,
@@ -576,7 +574,6 @@ def main():
                         "answer": result["answer"],
                         "correct": result["correct"],
                         "time_taken": result["time_taken"],
-                        # "bbox_image": result.get("bbox_image"),
                     }
                 )
 
@@ -622,8 +619,8 @@ def main():
             for assessment in assessments:
                 if assessment["category"] != category:
                     continue
-                model1_result = assessments_by_model[model1].get(assessment["file_name"])
-                model2_result = assessments_by_model[model2].get(assessment["file_name"])
+                model1_result = assessments_by_model[model1].get(assessment["test_id"])
+                model2_result = assessments_by_model[model2].get(assessment["test_id"])
 
                 if model1_result:
                     model1_results.append(model1_result)
@@ -732,6 +729,25 @@ def main():
     assets_dir = "assets/"
     if os.path.exists(assets_dir):
         shutil.copytree(assets_dir, OUTPUT_DIR, dirs_exist_ok=True)
+
+    # Update the template rendering to use test_id
+    for model_name, results in assessments_by_model.items():
+        for test_id, assessment in results.items():
+            assessment["test_id"] = test_id  # Ensure test_id is available in template
+            assessment["slug"] = slugify(assessment["assessment_name"])
+            assessment["logo"] = logos.get(model_name, "")
+            assessment["model_name"] = model_name
+            assessment["time_taken"] = f"{assessment['time_taken']:.2f}s"
+            assessment["result"] = assessment["result"] if assessment["result"] else ""
+            assessment["answer"] = assessment["answer"] if assessment["answer"] else ""
+            assessment["normalised_result"] = normalise_output(assessment["result"])
+            assessment["normalised_answer"] = normalise_output(assessment["answer"])
+            assessment["success"] = assessment["normalised_result"] == assessment["normalised_answer"]
+            assessment["success_percent"] = 100 if assessment["success"] else 0
+
+            # Generate individual test page
+            with open(os.path.join(OUTPUT_DIR, "prompts", f"{assessment['test_id']}.html"), "w") as f:
+                f.write(card_template.render(assessment=assessment))
 
 class TemplateChangeHandler(FileSystemEventHandler):
     def on_modified(self, event):
