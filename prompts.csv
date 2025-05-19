@@ -1,11 +1,11 @@
 file_name,prompt,answer,assessment_name,category,submitted_by,submitted_by_link
 glass.png,Is the glass rim cracked? Answer only yes or no.,Yes,Glass rim crack,Defect Detection,Roboflow,https://roboflow.com
-measurement.png,How wide is the sticker in inches? Answer only a number.,3.5,Measure a sticker,Object Measurement,Roboflow,https://roboflow.com
+measurement.png,How wide is the sticker in inches? Return only a real number.,3.5,Measure a sticker,Object Measurement,Roboflow,https://roboflow.com
 bottles.png,How many bottles are in the image? Answer only a number,27,Count bottles,Object Counting,Roboflow,https://roboflow.com
 date_picker.png,What date is picked on the calendar? Answer like January 1 2020,November 21 2017,Date picker,Web Action Understanding,Roboflow,https://roboflow.com
 receipt.png,How much tax was paid? Only answer like $1.00,$2.30,Read a receipt,Receipt Reading,Roboflow,https://roboflow.com
 tire.png,What is the serial number on the tire? Answer only the serial number.,3702692432,Read a serial number,OCR,Roboflow,https://roboflow.com
-ocr.png,Read the text in the image.,"I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times.",Read a screenshot of prose,OCR,Roboflow,https://roboflow.com
+ocr.png,Read the text in the image. Return only unformatted text.,"I was thinking earlier today that I have gone through, to use the lingo, eras of listening to each of Swift's Eras. Meta indeed. I started listening to Ms. Swift's music after hearing the Midnights album. A few weeks after hearing the album for the first time, I found myself playing various songs on repeat. I listened to the album in order multiple times.",Read a screenshot of prose,OCR,Roboflow,https://roboflow.com
 floor_plan.png,What are the dimensions of the living area? Return in format 11'1 X 11'1.,"10'2"" X 16'",Read dimensions on a floor plan,Document Understanding,Roboflow,https://roboflow.com
 solar_panels.png,How many rows of solar panels are in the image? Return only a number.,4,Count solar panels,Object Counting,Roboflow,https://roboflow.com
 container_truck.png,Is the shipping container on a truck? Return only yes or no.,Yes,Object on top of another object,Spatial Relations,Roboflow,https://roboflow.com
@@ -24,7 +24,7 @@ stack.png,Is the white box on top of or below the other box? Answer with either 
 candy_bar.png,Is the candy bar hanging off the assembly line? Return only yes or no.,Yes,Item hanging off assembly line,Object Detection,Roboflow,https://roboflow.com
 orientation.png,Is the item the right side up or upside down? Return only 'right side up' or 'upside down'.,upside down,Object orientation,Spatial Relations,Roboflow,https://roboflow.com
 house.png,Does the house with the terracotta roof have a solar panel? Yes or no.,Yes,Solar panel detection and colour understanding,Object Understanding,Roboflow,https://roboflow.com
-dents.png,How many dents are in the image?,1,Dent detection,Defect Detection,Roboflow,https://roboflow.com
+dents.png,How many dents are in the image? Return only the number.,1,Dent detection,Defect Detection,Roboflow,https://roboflow.com
 no_defect.png,Does the juice box have a defect? Yes or no.,No,Defect detection (no defect present),Defect Detection,Roboflow,https://roboflow.com
 warehouse_forklift.png,Is there a person next to the forklift? Yes or no.,Yes,Proximity to a forklift,Spatial Relations,Roboflow,https://roboflow.com
 wood_crack.png,How many cracks are in the wood? Return a number.,1,Crack detection,Defect Detection,Roboflow,https://roboflow.com
@@ -36,9 +36,9 @@ receipt_subtotal_tear.png,What is the subtotal of the receipt? Return only the a
 table_understanding.png,What is the adjusted EBITDA in the nine months ended September 2023 (in millions)?,"2,428",Table understanding,Document Understanding,Roboflow,https://roboflow.com
 robotic_arm_orientation.png,"Is the robotic arm grip pointing down, at a left angle, or at a right angle? Return down right or left.",down,Robotic arm grip orientation,Spatial Relations,Roboflow,https://roboflow.com
 robotic_arm_orientation.png,Is there a person next to the robotic arm? Answer only yes or no.,Yes,Human proximity to robotic arm,Spatial Relations,Roboflow,https://roboflow.com
-circuit_board.png,Read the number above the left transistor. Return only the number.,101,Circuit board understanding,Object Understanding,Roboflow,https://roboflow.com
+circuit_board.png,Read the number above the left transistor. Return only the number.,0101,Circuit board understanding,Object Understanding,Roboflow,https://roboflow.com
 blurry_load_carriers.png,How many load carriers are in the image? Return only a number.,3,Object counting with a blurry image,Object Counting,Roboflow,https://roboflow.com
-screenshot_web_catalog.png,"What is the package quantity of 90183A308? Return only a number. If SKU does not exist, return NULL.",50,Table understanding from a web catalog,Document Understanding,Roboflow,https://roboflow.com
+screenshot_web_catalog.png,"What is the package quantity of 90183A308? Return only a number. If SKU does not exist, return NULL.",50,(WIP) Table understanding from a web catalog,Document Understanding,Roboflow,https://roboflow.com
 screenshot_web_catalog.png,"What is the package quantity of 90183A308? Return only a number. If SKU does not exist, return NULL.",NULL,Table understanding from a web catalog (SKU does not exist),Document Understanding,Roboflow,https://roboflow.com
 fallen_crockery.png,Has a piece of crockery fallen off the assembly line? Yes or no.,Yes,Object fallen off assembly line,Object Understanding,Roboflow,https://roboflow.com
 empty_metal_plate.png,"Do any metal plates have no blue parts on top? If so, return the tray position. The position must be either 1, 2, 3, or 4. 1 is the leftmost tray. 4 is the rightmost tray. Otherwise, return NULL.",4,Missing object on assembly line tray,Object Understanding,Roboflow,https://roboflow.com
@@ -49,8 +49,6 @@ chassis_holes.png,What is the colour of the cartridge to the right side of the i
 bend.png,Are there any bends in the part? Return either yes or no.,Yes,Defect detection: bends,Defect Detection,Roboflow,https://roboflow.com
 truck_in_bay.png,Is the Scania truck in the bay? Return either yes or no.,No,Truck in bay,Spatial Relations,Roboflow,https://roboflow.com
 missing_part.png,How many parts are missing? Return only a number.,1,Missing part in box,Defect Detection,Roboflow,https://roboflow.com
-missing_part.png,"What colour is the part tip? Red, orange, green, or blue. Only return the colour.",red,Colour identification on part,Defect Detection,Roboflow,https://roboflow.com
-missing_part.png,"What colour is the part tip? Indigo, orange, green, or blue. Only return the colour.",red,Colour identification on part (with un-enumerated colour in prompt),Defect Detection,Roboflow,https://roboflow.com
 bolts.png,Are all six bolts screwed in? Return only yes or no.,Yes,Bolts screwed in,Defect Detection,Roboflow,https://roboflow.com
 coffee_plant.png,Is the coffee plant ready to farm? It is only ready to farm if the majority of berries are red. Return only yes or no.,No,Coffee plants ready to farm,Object Understanding,Roboflow,https://roboflow.com
 zone_understanding.png,Is the worker in the safe zone (marked in yellow)? Return only yes or no.,Yes,Worker in zone,Spatial Relations,Roboflow,https://roboflow.com
@@ -69,10 +67,10 @@ juice_box_label.png,Does the juice box package show an orange eat well label? Re
 seal_verification.png,Is the bottle top properly sealed onto the bottle? Return only yes or no.,No,Seal verification,Defect Detection,Roboflow,https://roboflow.com
 price.png,"How much are the wipes? Currency is GBP. Return in form 1.00, or 0.00.",0.58,Supermarket shelf label reading with one item in focus,OCR,Roboflow,https://roboflow.com
 price_with_two_items.png,"How much are the wipes? Currency is GBP. Return in form 1.00, or 0.00.",0.58,Supermarket shelf label reading with two items in focus,OCR,Roboflow,https://roboflow.com
-box_sealed.png,Is the box sealed? Return yes or no.,No,Unsealed box,Defect Detection,Roboflow,https://roboflow.com
+box_sealed.png,Is the outer box sealed? Return yes or no.,No,Unsealed box,Defect Detection,Roboflow,https://roboflow.com
 barcode_reading.png,What is the ID on the barcode? Return only the ID text.,T074802630B2,Read barcode ID on circuit board,OCR,Roboflow,https://roboflow.com
 epoch_flat.png,"At what epoch does the line start to flatten out? Return only the epoch number, like 99.",4,Point a line flattens on a graph,Document Understanding,Roboflow,https://roboflow.com
-roast_date.png,"When was the coffee roasted? Return only the roast date in DD/MM/YYYY, like 01/12/2019.",08-09-2020,Roast date on a label,Document Understanding,Roboflow,https://roboflow.com
+roast_date.png,"When was the coffee roasted? Return only the roast date in DD/MM/YYYY, like 01/12/2019.",08/09/2020,Roast date on a label,Document Understanding,Roboflow,https://roboflow.com
 part_number.png,Return the part number.,10629101,Part number reading,OCR,Roboflow,https://roboflow.com
 container_information_retrieval.png,What is the max gross weight?,"32,500 kg",Maximum gross weight label on shipping container,OCR,Roboflow,https://roboflow.com
 complete_pallet.png,How many boxes are missing? Return only a number.,1,Missing boxes on pallet,Object Understanding,Roboflow,https://roboflow.com
@@ -94,4 +92,3 @@ sudoku.png,"You are given an image of a Sudoku puzzle. Your task is to detect an
 .7..6..4.
 ...2.7...",Sudoku puzzle extraction,Document Understanding,Roboflow,https://roboflow.com
 biscuts.jpg,How many biscuts or cookies are there?,3,Count number of biscuts,Object Counting,SnehitVaddi,https://github.com/snehitvaddi
-
