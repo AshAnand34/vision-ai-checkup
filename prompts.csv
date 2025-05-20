@@ -92,3 +92,5 @@ sudoku.png,"You are given an image of a Sudoku puzzle. Your task is to detect an
 .7..6..4.
 ...2.7...",Sudoku puzzle extraction,Document Understanding,Roboflow,https://roboflow.com
 biscuts.jpg,How many biscuts or cookies are there?,3,Count number of biscuts,Object Counting,SnehitVaddi,https://github.com/snehitvaddi
+diameter_part.png,Please check and measure the inner diameter and outer diameter of the part in the attached images.,The Outer Diameter of the part is 121 mm and Inner diameter is 32 mm,To check the part Outer diamter and inner diameter in mm,Object Measurement,User,
+7-cube_t0.svg,How many vertices (marked as red or orange dots) are visible in this diagram? Present your answer as an integer, like 1.,127,Counting nodes,Object Counting,User,https://en.wikipedia.org/wiki/File:7-cube_t0.svg
