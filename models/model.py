@@ -1,5 +1,5 @@
 class Model:
-    def run(self, image: str, prompt: str, image_name=None):
+    def run(self, image: str, prompt: str, image_name=None, structured_output_format: str = None):
         raise NotImplementedError("This method should be overridden by subclasses.")
 
     def run_with_retry(

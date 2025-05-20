@@ -67,11 +67,95 @@ Then:
 
 ### Add a Model
 
-The `models` directory lists all of the supported model vendors.
+The `models` directory contains implementations for all supported model vendors. Each model implementation inherits from the base `Model` class in `models/model.py`.
 
-If you want to add a new model by a supported vendor, update the `model_providers` dictionary in the `assess.py` file and add the model ID.
+#### Adding a Model from an Existing Vendor
 
-If you want to add a model by a vendor that is not yet supported, create a file in the `models` directory following the same structure as the other models.
+If you want to add a new model from a vendor that is already supported (e.g., OpenAI, Anthropic, etc.), you only need to update the `model_providers` dictionary in `assess.py`. For example:
+
+```python
+model_providers = {
+    # ... existing models ...
+    "Your New Model Name": OpenAIModel(model_id="your-model-id"),
+    # or
+    "Your New Model Name": AnthropicModel(model_id="your-model-id"),
+    # etc.
+}
+```
+
+#### Adding Support for a New Vendor
+
+To add support for a new vendor/model provider:
+
+1. Create a new file in the `models` directory (e.g., `models/your_vendor.py`).
+
+2. Create a class that inherits from the base `Model` class:
+   ```python
+   from .model import Model
+
+   class YourVendorModel(Model):
+       def __init__(self, model_id: str, api_key: str = None, base_url: str = None):
+           self.model_id = model_id
+           self.api_key = api_key or os.environ.get("YOUR_VENDOR_API_KEY")
+           self.base_url = base_url
+           # Add any other initialization needed
+
+       def run(self, image: str, prompt: str, image_name=None, structured_output_format: str = None):
+           # Implement the model's inference logic here
+           # - image: The image data as bytes
+           # - prompt: The text prompt to send with the image
+           # - image_name: Optional filename for logging
+           # - structured_output_format: Optional format string for structured output
+           
+           # Your implementation should:
+           # 1. Prepare the image and prompt for your vendor's API
+           # 2. Make the API call
+           # 3. Process the response
+           # 4. Return the model's text response
+           
+           # Example:
+           # response = your_vendor_api_call(image, prompt)
+           # return response.text
+           raise NotImplementedError("Implement your vendor's API call here")
+   ```
+
+3. Add your model to the `model_providers` dictionary in `assess.py`:
+   ```python
+   from models.your_vendor import YourVendorModel
+
+   model_providers = {
+       # ... existing models ...
+       "Your Model Name": YourVendorModel(
+           model_id="your-model-id",
+           api_key=os.environ.get("YOUR_VENDOR_API_KEY"),  # Optional if using env var
+           base_url="your-api-base-url"  # Optional
+       ),
+   }
+   ```
+
+4. Add the required API key to the environment variables section in the README and update the setup instructions if needed.
+
+5. Test your implementation by running the assessment:
+   ```bash
+   python3 assess.py
+   ```
+
+#### Model Implementation Requirements
+
+Your model implementation should:
+
+- Handle API authentication and any required headers
+- Process the image data appropriately for your vendor's API
+- Handle API errors and retries (the base class provides retry logic)
+- Return the model's response as a string
+- Support optional structured output format if your model can handle it
+- Log appropriate information for debugging
+
+See the existing model implementations in the `models` directory for examples:
+- `models/openai.py` for OpenAI models
+- `models/anthropic.py` for Anthropic models
+- `models/gemini.py` for Google's Gemini models
+- etc.
 
 ### Bugs, other changes
 
