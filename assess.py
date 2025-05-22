@@ -29,6 +29,29 @@ from models.gemini import GeminiModel
 from models.openai import OpenAIModel
 # from models.roboflow_workflow import RoboflowWorkflow
 # from utils.data_types import BoundingBoxes
+
+open_or_closed_source = {
+    "OpenAI O4 Mini": "closed",
+    "GPT-4.1": "closed",
+    "ChatGPT-4o": "closed",
+    "GPT-4.1 Mini": "closed",
+    "GPT-4.1 Nano": "closed",
+    "OpenAI O1": "closed",
+    "Claude 3.7 Sonnet": "closed",
+    "Claude 3.5 Haiku": "closed",
+    "Gemini 2.5 Pro Preview": "closed",
+    "Gemini 2.0 Flash": "closed",
+    "Gemini 2.0 Flash Lite": "closed",
+    "Gemini 2.5 Flash Preview": "closed",
+    "Cohere Aya Vision 8B": "closed",
+    "Cohere Aya Vision 32B": "closed",
+    "Qwen 2.5 VL 7B": "open",
+    "Mistral Small 3.1 24b": "open",
+    "Llama 4 Scout 17B": "closed",
+    "Llama 3 11B Vision": "closed",
+    "Gemma 3 27b": "closed",
+}
+
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     os.makedirs(os.path.join(OUTPUT_DIR, "prompts"), exist_ok=True)
@@ -78,6 +101,8 @@ def main():
         "Gemini 2.5 Flash Preview": "https://www.google.com/favicon.ico",
         "Cohere Aya Vision 8B": "https://cohere.com/favicon.ico",
         "Cohere Aya Vision 32B": "https://cohere.com/favicon.ico",
+        "Claude 4 Sonnet": "https://www.anthropic.com/favicon.ico",
+        "Claude 4 Opus": "https://www.anthropic.com/favicon.ico",
     }
 
     def normalise_output(output):
@@ -93,9 +118,8 @@ def main():
     with open("prompts.csv", "r") as file:
         reader = csv.DictReader(file)
         assessments = list(reader)
-        for idx, assessment in enumerate(assessments):
+        for assessment in assessments:
             assessment["slug"] = slugify(assessment["assessment_name"])
-            assessment["test_id"] = str(idx)  # Add test_id based on row index
 
     assessments_by_model = defaultdict(lambda: defaultdict(list))
 
@@ -107,7 +131,7 @@ def main():
             assessment["image"] = image_file.read()
         start_time = time.time()
         print(
-            f"Running {model_name} with test ID {assessment['test_id']} (image {assessment['file_name']}) and prompt {assessment['prompt']}"
+            f"Running {model_name} with image {assessment['file_name']} and prompt {assessment['prompt']}"
         )
 
         result = model.run_with_retry(
@@ -117,7 +141,7 @@ def main():
         )
         # if result is none, try on compressed
         if result is None:
-            print(f"Retrying {model_name} with compressed image for test ID {assessment['test_id']}")
+            print(f"Retrying {model_name} with compressed image")
             with open(
                 os.path.join(BASE_IMAGE_DIR, "compressed/", assessment["file_name"].replace(".png", ".jpeg")), "rb"
             ) as image_file:
@@ -164,6 +188,8 @@ def main():
             "Llama 4 Scout 17B": "",
             "Llama 3 11B Vision": "",
             "Gemma 3 27b": "",
+            "Claude 4 Sonnet": "",
+            "Claude 4 Opus": "",
         }
         # load from saved_results
         assessments_by_model = final_results["assessments_by_model"]
@@ -178,6 +204,8 @@ def main():
                 times_by_model[model_name].append(float(assessment["time_taken"].replace("s", "")))
     else:
         model_providers = {
+            "Claude 4 Sonnet": AnthropicModel(model_id="claude-sonnet-4-20250514"),
+            "Claude 4 Opus": AnthropicModel(model_id="claude-opus-4-20250514"),
             "OpenAI O4 Mini": OpenAIModel(model_id="o4-mini"),
             "GPT-4.1": OpenAIModel(model_id="gpt-4.1"),
             "ChatGPT-4o": OpenAIModel(model_id="chatgpt-4o-latest"),
@@ -250,7 +278,7 @@ def main():
                     len(normalise_output(result)) > 1
                     and normalise_output(answer) in normalise_output(result)
                 )
-                assessments_by_model[model_name][assessment["test_id"]] = payload
+                assessments_by_model[model_name][assessment["file_name"]] = payload
         model_results = {}
 
     for model_name, results in assessments_by_model.items():
@@ -266,9 +294,9 @@ def main():
         }
 
     # transform assessments_by_model[model_name][assessment["file_name"]] to the last item
-    for model_name, results in assessments_by_model.items():
-        for assessment in results.values():
-            results[assessment["file_name"]] = assessment
+    # for model_name, results in assessments_by_model.items():
+    #     for assessment in results.values():
+    #         results[assessment["file_name"]] = assessment
 
     # order model results by percentage
     model_results = dict(
@@ -288,7 +316,7 @@ def main():
 
     for model_name, results in assessments_by_model.items():
         for assessment in assessments:
-            assessment_item = results.get(assessment["test_id"], {})
+            assessment_item = results.get(assessment["file_name"], {})
             if not assessment_item:
                 continue
             assessments_by_model_by_category[model_name][assessment["category"]].append(
@@ -356,6 +384,7 @@ def main():
         tasks=assessment_categories,
         task="all",
         title="Vision AI Checkup",
+        open_or_closed_source=open_or_closed_source,
     )
 
     models = list(model_providers.keys())
@@ -436,18 +465,18 @@ def main():
             description=f"Explore the best models for {category} tasks.",
         )
 
-        with open(os.path.join(OUTPUT_DIR, f"{slugify(category)}.html"), "w", encoding="utf-8") as file:
+        with open(os.path.join(OUTPUT_DIR, f"{slugify(category)}.html"), "w") as file:
             file.write(category_output)
 
 
-    with open(os.path.join(OUTPUT_DIR, "index.html"), "w", encoding="utf-8") as file:
+    with open(os.path.join(OUTPUT_DIR, "index.html"), "w") as file:
         file.write(output)
 
     for model_name, results in assessments_by_model.items():
         os.makedirs(os.path.join(OUTPUT_DIR, slugify(model_name)), exist_ok=True)
 
         with open(
-            os.path.join(OUTPUT_DIR, f"{slugify(model_name)}/index.html"), "w", encoding="utf-8"
+            os.path.join(OUTPUT_DIR, f"{slugify(model_name)}/index.html"), "w"
         ) as file:
             results = sorted(
                 results.values(),
@@ -474,6 +503,7 @@ def main():
 
             file.write(
                 card_template.render(
+                    open_or_closed_source=open_or_closed_source,
                     model_name=model_name,
                     grid=True,
                     comparisons=[{"slug": f"/compare/{slugify(m1)}-vs-{slugify(m2)}/", "model_name": m2 if m1 == model_name else m1} for m1, m2 in model_combinations if m1 == model_name or m2 == model_name],
@@ -527,7 +557,7 @@ def main():
         
     saved_results = delete_bytes(saved_results)
 
-    with open("model_results.json", "w", encoding="utf-8") as file:
+    with open("model_results.json", "w") as file:
         file.write(json.dumps(saved_results, indent=4))
 
     for assessment in assessments:
@@ -558,15 +588,18 @@ def main():
         og_image="https://visioncheckup.com/prompts",
     )
 
-    with open(os.path.join(OUTPUT_DIR, "prompts/index.html"), "w", encoding="utf-8") as file:
+    with open(os.path.join(OUTPUT_DIR, "prompts/index.html"), "w") as file:
         file.write(prompts_output)
 
     # create pages for each assessment
     for assessment in assessments:
         model_results = []
         for model_name, results in assessments_by_model.items():
-            if assessment["test_id"] in results:
-                result = results[assessment["test_id"]]
+            if assessment["file_name"] in results:
+                result = results[assessment["file_name"]]
+                # print(
+                #     f"Creating page for {assessment['file_name']} with {model_name} - {result['correct']}"
+                # )
                 model_results.append(
                     {
                         "model_name": model_name,
@@ -574,6 +607,7 @@ def main():
                         "answer": result["answer"],
                         "correct": result["correct"],
                         "time_taken": result["time_taken"],
+                        # "bbox_image": result.get("bbox_image"),
                     }
                 )
 
@@ -606,7 +640,6 @@ def main():
                 OUTPUT_DIR, "assessments", f"{slugify(assessment['assessment_name'])}/index.html"
             ),
             "w",
-            encoding="utf-8"
         ) as file:
             file.write(assessment_output)
 
@@ -620,8 +653,8 @@ def main():
             for assessment in assessments:
                 if assessment["category"] != category:
                     continue
-                model1_result = assessments_by_model[model1].get(assessment["test_id"])
-                model2_result = assessments_by_model[model2].get(assessment["test_id"])
+                model1_result = assessments_by_model[model1].get(assessment["file_name"])
+                model2_result = assessments_by_model[model2].get(assessment["file_name"])
 
                 if model1_result:
                     model1_results.append(model1_result)
@@ -640,7 +673,7 @@ def main():
                     * 100,
                     1,
                 ),
-                "avg_time": f"{sum(float(result['time_taken'].replace('s', '')) for result in model1_results) / (len(model1_results) or 1):.2f}s"
+                "avg_time": f"{sum(float(result["time_taken"].replace("s", "")) for result in model1_results) / (len(model1_results) or 1):.2f}s"
             }
 
             by_category_results[category]["model2"] = {
@@ -655,7 +688,7 @@ def main():
                     * 100,
                     1,
                 ),
-                "avg_time": f"{sum(float(result['time_taken'].replace('s', '')) for result in model2_results) / (len(model2_results) or 1):.2f}s",
+                "avg_time": f"{sum(float(result["time_taken"].replace("s", "")) for result in model2_results) / (len(model2_results) or 1):.2f}s",
             }
 
         # create a compare page for each model combination
@@ -699,7 +732,7 @@ def main():
 
         os.makedirs(os.path.join(OUTPUT_DIR, "compare"), exist_ok=True)
         os.makedirs(os.path.join(OUTPUT_DIR, "compare", f"{slugify(model1)}-vs-{slugify(model2)}"), exist_ok=True)
-        with open(os.path.join(OUTPUT_DIR, "compare", f"{slugify(model1)}-vs-{slugify(model2)}/index.html"), "w", encoding="utf-8") as file:
+        with open(os.path.join(OUTPUT_DIR, "compare", f"{slugify(model1)}-vs-{slugify(model2)}/index.html"), "w") as file:
             file.write(compare_output)
 
     urls = []
@@ -724,31 +757,12 @@ def main():
         urls=urls,
         build_date=time.strftime("%Y-%m-%dT%H:%M:%S+00:00", time.gmtime()),
     )
-    with open(os.path.join(OUTPUT_DIR, "sitemap.xml"), "w", encoding="utf-8") as file:
+    with open(os.path.join(OUTPUT_DIR, "sitemap.xml"), "w") as file:
         file.write(sitemap_output)
 
     assets_dir = "assets/"
     if os.path.exists(assets_dir):
         shutil.copytree(assets_dir, OUTPUT_DIR, dirs_exist_ok=True)
-
-    # Update the template rendering to use test_id
-    for model_name, results in assessments_by_model.items():
-        for test_id, assessment in results.items():
-            assessment["test_id"] = test_id  # Ensure test_id is available in template
-            assessment["slug"] = slugify(assessment["assessment_name"])
-            assessment["logo"] = logos.get(model_name, "")
-            assessment["model_name"] = model_name
-            assessment["time_taken"] = f"{assessment['time_taken']:.2f}s"
-            assessment["result"] = assessment["result"] if assessment["result"] else ""
-            assessment["answer"] = assessment["answer"] if assessment["answer"] else ""
-            assessment["normalised_result"] = normalise_output(assessment["result"])
-            assessment["normalised_answer"] = normalise_output(assessment["answer"])
-            assessment["success"] = assessment["normalised_result"] == assessment["normalised_answer"]
-            assessment["success_percent"] = 100 if assessment["success"] else 0
-
-            # Generate individual test page
-            with open(os.path.join(OUTPUT_DIR, "prompts", f"{assessment['test_id']}.html"), "w") as f:
-                f.write(card_template.render(assessment=assessment))
 
 class TemplateChangeHandler(FileSystemEventHandler):
     def on_modified(self, event):
