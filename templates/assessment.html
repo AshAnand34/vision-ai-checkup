@@ -2,7 +2,7 @@
 {% block content %}
 <div class="w-full max-w-[75rem] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6 relative">
     <div class="relative">
-        <div class="flex flex-col gap-6 sticky top-20">
+        <div class="flex flex-col gap-6 py-12 md:sticky top-16 md:max-h-[calc(100vh-7rem)] md:overflow-y-auto md:scrollbar-thin md:scrollbar-thumb-transparent md:hover:scrollbar-thumb-zinc-300 md:scrollbar-track-transparent">
 
         <section>
             <h1 class="h1">Prompt: {{ assessment['assessment_name'] }}</h1>
@@ -28,8 +28,8 @@
     </div>
 
     </div>
-    <section>
-        <h2 class="h2 mb-3 md:mt-[44px]">How models perform on this prompt</h2>
+    <section class="pb-12 md:pt-12">
+        <h2 class="h2 mb-3 md:mt-[33px]">How models perform on this prompt</h2>
         <div class="flex flex-col gap-2">
             {% for item in model_results %}
                 <details class="card cursor-pointer group">
