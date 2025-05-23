@@ -112,7 +112,7 @@
         <img src="/images/svg/lenses.svg" alt="lenses illustration" class="bkg-img-lenses">
     </div>
 
-    <main class="flex flex-col flex-grow gap-10 py-12 relative z-10" {% if full_width %}class="w-full"{% endif %} {% if grid %}class="max-w-[75rem] mx-auto flex gap-6 relative z-10"{% endif %}>
+    <main class="flex flex-col flex-grow gap-10 relative z-10 {% if self._TemplateReference__context.name in ['card.html', 'assessment.html'] %} {% else %}py-12{% endif %}" {% if full_width %}class="w-full"{% endif %} {% if grid %}class="max-w-[75rem] mx-auto flex gap-6 relative z-10"{% endif %}>
         {% block content %}
         {% endblock %}
     </main>
